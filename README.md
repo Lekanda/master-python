@@ -2,14 +2,14 @@
 
 ###### Primeros Pasos
 * Cap-4
-    ´´´
+```
     * python --version => da la version
     * python -v => Da errores
 
 
     * python --help => Da informacion de comandos
     * python => Entra en consola de Python.("exit" para salir de consola Python)
-    ´´´
+```
 
     * Descargar de la web de python
 
@@ -22,3 +22,8 @@
     * Variables ,concatenarlas y convertirlas
 
 ###### Operadores
+* Cap-14 a 16
+    *  Operadores, incrementos y decrementos
+
+###### Entrada y Salida de Datos
+* Cap-
