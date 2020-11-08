@@ -1,6 +1,5 @@
 # Esto me muestra el texto en consola o pantalla
 
-
 print("Hola")
 print("Mundo")
 print("!!")
