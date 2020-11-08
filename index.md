@@ -1,6 +1,7 @@
-## Welcome to GitHub Pages
+## Welcome to Master-Python´s GitHub Pages
+![Lauburu](https://www.dropbox.com/s/lxkr0aonyf2dlhu/estrella-luburu.png?dl=0)
 
-You can use the [editor on GitHub](https://github.com/Lekanda/master-python/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Este curso es [Python desde 0](https://www.udemy.com/course/master-en-python-aprender-python-django-flask-y-tkinter/) , curso de iniciacion a Python.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
@@ -9,19 +10,9 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
-Syntax highlighted code block
-
 # Header 1
 ## Header 2
 ### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
 ```
