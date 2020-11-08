@@ -17,3 +17,8 @@
     * Se pone una **#** delante de la linea 
     * con 3 comillas" empieza el bloque de comentarios, luego se cierra igual.
 
+###### Variables
+* Cap-9 a 13
+    * Variables ,concatenarlas y convertirlas
+
+###### Operadores
