@@ -1,6 +1,6 @@
 ### Apuntes del curso
 
-###### Primeros Pasos
+###### 01-Primeros Pasos
 * Cap-4
 ```
 * python --version => da la version
@@ -21,14 +21,14 @@ esto es un comentario
 """
 ```
 
-###### Variables
+###### 02-Variables
 * Cap-9 a 13
     * Variables ,concatenarlas y convertirlas
 
-###### Operadores
+###### 03-Operadores
 * Cap-14 a 16
     *  Operadores, incrementos y decrementos
 
-###### Entrada y Salida de Datos
+###### 04-Entrada y Salida de Datos
 * Cap-17
     * Entrada de datos
