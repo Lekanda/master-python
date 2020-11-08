@@ -32,3 +32,10 @@ esto es un comentario
 ###### 04-Entrada y Salida de Datos
 * Cap-17
     * Entrada de datos
+
+###### 05-Condicionales
+* Cap-18 a 23
+
+###### 06-Bucles
+* Cap-24 a 27
+    * FOR y WHILE
