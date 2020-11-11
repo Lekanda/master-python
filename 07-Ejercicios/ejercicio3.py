@@ -5,7 +5,7 @@
 # numero = 0
 # resultado=0
 
-# while numero<=60:
+# while numero<=60:UJI
 #     resultado=numero*numero
 #     print(f"El cuadrado del numero {numero} es {resultado}")
 #     resultado=0
