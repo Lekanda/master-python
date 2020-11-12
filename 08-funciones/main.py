@@ -38,24 +38,40 @@ nombreFuncion(parametro/s)
 
 
 # Ejemplo 5 RETURN Y EJEMPLOS COMPLETOS
-num1=int(input("Dame un numero: "))
-num2=int(input("Dame otro numero: "))
-ope=input("Que operacion quieres hacer")
-resultado=0
+# num1=int(input("Dame un numero: "))
+# num2=int(input("Dame otro numero: "))
+# ope=input("Que operacion quieres hacer")
+# resultado=0
 
-def calculadora(ope):
-    if ope == "+" :
-        resultado=num1+num2
-        return(resultado)
-    elif ope=="-":
-        resultado=num1-num2
-        return(resultado)
-    elif ope=="*":
-        resultado=num1*num2
-        return(resultado)
-    elif ope=="/":
-        resultado=num1/num2
-        return(resultado)
-print(f"El resultado es {calculadora(ope)}")
+# def calculadora(ope):
+#     if ope == "+" :
+#         resultado=num1+num2
+#         return(resultado)
+#     elif ope=="-":
+#         resultado=num1-num2
+#         return(resultado)
+#     elif ope=="*":
+#         resultado=num1*num2
+#         return(resultado)
+#     elif ope=="/":
+#         resultado=num1/num2
+#         return(resultado)
+# print(f"El resultado es {calculadora(ope)}")
 
 # En capitulo 42 ver ejemplo en min 4:00 aprox para crear cadenas
+
+
+# Ejemplo 7 Funciones dentro de otras
+def getNombre(nombre):
+    texto = f"El nombre es : {nombre}"
+    return texto
+def getApellido(apellido):
+    texto = f"El apellido es : {apellido}"
+    return texto
+def devuelveTodo(nombre, apellido):
+    texto= getNombre(nombre) + " " + getApellido(apellido)
+    return texto
+
+# print(getNombre("andres"), getApellido("Bernaola"))
+
+print(devuelveTodo("Andres","Bernaola"))
