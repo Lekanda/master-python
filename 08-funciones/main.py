@@ -23,3 +23,16 @@ def muestraNombres(nombre):
     print("\n\n")
 
 muestraNombres(nombre)
+
+# Ejemplo 4 PARAMETROS OPCIONALES
+"""
+-Sí queremos que uuno de los argumentos de la funcion sea opcional:
+ def empleado(nombre, dni=False o numero por defecto, None)
+
+ -Se puede poner un if en el interior para que no lo haga
+
+ if dni!=None:   lo hace
+
+ -O pasar la 2ªvariable en el llamamiento de la funcion
+"""
+
