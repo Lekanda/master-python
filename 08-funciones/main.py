@@ -10,6 +10,8 @@ nombreFuncion(parametro/s)
 
 """
 
+
+
 # Ejemplo 1
 # nombre=input("dame un nombre: ")
 # print("\n")
@@ -23,6 +25,14 @@ nombreFuncion(parametro/s)
 #     print("\n\n")
 
 # muestraNombres(nombre)
+
+
+
+
+
+
+
+
 
 # Ejemplo 4 PARAMETROS OPCIONALES
 """
@@ -61,17 +71,38 @@ nombreFuncion(parametro/s)
 # En capitulo 42 ver ejemplo en min 4:00 aprox para crear cadenas
 
 
+
+
+
+
+
 # Ejemplo 7 Funciones dentro de otras
-def getNombre(nombre):
-    texto = f"El nombre es : {nombre}"
-    return texto
-def getApellido(apellido):
-    texto = f"El apellido es : {apellido}"
-    return texto
-def devuelveTodo(nombre, apellido):
-    texto= getNombre(nombre) + " " + getApellido(apellido)
-    return texto
+# def getNombre(nombre):
+#     texto = f"El nombre es : {nombre}"
+#     return texto
+# def getApellido(apellido):
+#     texto = f"El apellido es : {apellido}"
+#     return texto
+# def devuelveTodo(nombre, apellido):
+#     texto= getNombre(nombre) + " " + getApellido(apellido)
+#     return texto
 
-# print(getNombre("andres"), getApellido("Bernaola"))
+# # print(getNombre("andres"), getApellido("Bernaola"))
 
-print(devuelveTodo("Andres","Bernaola"))
+# print(devuelveTodo("Andres","Bernaola"))
+
+
+
+
+
+"""
+*Funciones LAMBDA: Son funciones anonimas para tareas simples y pequeñas pero pueden ser muy repetitivas, no tiene nombre
+* Todo su contenido se traduce a una linea. No pueden ser complejas
+"""
+
+# Ejemplo 8 : FUNCIONES LAMBDA
+
+# programa para decir en que año estamos
+
+dime_el_year=lambda year: f"El año es : {year}"
+print(dime_el_year(2020))
