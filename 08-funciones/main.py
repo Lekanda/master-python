@@ -11,18 +11,18 @@ nombreFuncion(parametro/s)
 """
 
 # Ejemplo 1
-nombre=input("dame un nombre: ")
-print("\n")
-print("########## EJEMPLO1 ##########")
-print("\n\n")
+# nombre=input("dame un nombre: ")
+# print("\n")
+# print("########## EJEMPLO1 ##########")
+# print("\n\n")
 
-def muestraNombres(nombre):
-    print("Andres")
-    print("Bernaola")
-    print(f"hola {nombre}")
-    print("\n\n")
+# def muestraNombres(nombre):
+#     print("Andres")
+#     print("Bernaola")
+#     print(f"hola {nombre}")
+#     print("\n\n")
 
-muestraNombres(nombre)
+# muestraNombres(nombre)
 
 # Ejemplo 4 PARAMETROS OPCIONALES
 """
@@ -36,3 +36,26 @@ muestraNombres(nombre)
  -O pasar la 2ªvariable en el llamamiento de la funcion
 """
 
+
+# Ejemplo 5 RETURN Y EJEMPLOS COMPLETOS
+num1=int(input("Dame un numero: "))
+num2=int(input("Dame otro numero: "))
+ope=input("Que operacion quieres hacer")
+resultado=0
+
+def calculadora(ope):
+    if ope == "+" :
+        resultado=num1+num2
+        return(resultado)
+    elif ope=="-":
+        resultado=num1-num2
+        return(resultado)
+    elif ope=="*":
+        resultado=num1*num2
+        return(resultado)
+    elif ope=="/":
+        resultado=num1/num2
+        return(resultado)
+print(f"El resultado es {calculadora(ope)}")
+
+# En capitulo 42 ver ejemplo en min 4:00 aprox para crear cadenas
