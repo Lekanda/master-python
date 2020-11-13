@@ -28,5 +28,9 @@ print(cantantes[1:3])
     # li-29: Todos a partir del 0
 print(cantantes[0:])
 
+# Añadir elementos a una lista
+cantantes.append("Lou Reed")
+cantantes.append("Joan Baez")
+print (cantantes)
 
 
