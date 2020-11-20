@@ -15,11 +15,7 @@
 * Cap-8 Comentarios
     * Se pone una **#** delante de la linea 
     * con 3 comillas" empieza el bloque de comentarios, luego se cierra igual.
-```python
-"""
-esto es un comentario
-"""
-```
+
 
 ###### 02-Variables
 * Cap-9 a 13
@@ -39,3 +35,9 @@ esto es un comentario
 ###### 06-Bucles
 * Cap-24 a 27
     * FOR y WHILE
+
+###### 06-Funciones
+* Cap-38 a 47
+
+###### 07-Listas
+* Cap-48 a 53

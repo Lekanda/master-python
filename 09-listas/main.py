@@ -1,7 +1,7 @@
 """
-                 **LISTAS (arrays)**
--Son colecciones de Datos/valores, bajo un unico nombre.
--Para acceder a esos valores usamos un indice numerico
+                 **LISTAS**
+- Son colecciones de Datos/valores, bajo un unico nombre.
+- Para acceder a esos valores usamos un indice numerico
 
 - TUPLA: Es lo mismo que una lista pero sus valores no pueden cambiar. Para crearla con LIST ponerlo entre parentesis. Ver ejemplo abajo
 """
@@ -32,5 +32,29 @@ print(cantantes[0:])
 cantantes.append("Lou Reed")
 cantantes.append("Joan Baez")
 print (cantantes)
+
+
+
+# LISTADO DE UNA LISTA(ARRAY)
+for pelicula in peliculas:
+    print(f"{peliculas.index(pelicula)} . {pelicula}")
+
+# Para que empieze el indice en el 1
+for pelicula in peliculas:
+    print(f"{peliculas.index(pelicula)+1} . {pelicula}")
+
+
+
+# Pide peliculas hasta meter "parar". Las une a la lista "peliculas"
+"""
+nuevaPelicula = ""
+while nuevaPelicula != "parar":
+  nuevaPelicula= input("Introduce una pelicula nueva: ")
+  peliculas.append(nuevaPelicula)
+
+for pelicula in peliculas:
+  print(f"{peliculas.index(pelicula)+1} . {pelicula}")
+"""
+
 
 
