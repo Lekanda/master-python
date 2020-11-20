@@ -56,5 +56,31 @@ for pelicula in peliculas:
   print(f"{peliculas.index(pelicula)+1} . {pelicula}")
 """
 
+# Listas Multidimensionales
 
+contactos = [
+  [
+    'Andres',
+    'a@a.com'
+  ],
+  [
+    'Luis',
+    'luis@gfmaa.com'
+  ],
+  [
+    'Jon',
+    'a@gatyu.com'
+  ]
+]
 
+print (contactos)
+print (contactos[1])
+print (contactos[1][0])
+print (contactos[1][1])
+
+for contacto in contactos:
+  for elemento in contacto:
+    if contacto.index(elemento) == 0:
+      print(f"Nombre : " + elemento)
+    else:
+      print("Email: " + elemento)
