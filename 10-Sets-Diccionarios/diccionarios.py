@@ -15,3 +15,40 @@ print(persona)
 print(type(persona))
 print(persona["apellidos"])
 print(persona["web"])
+print("\n\n")
+
+
+
+# Lista con Diccionarios(En JS Array de Objetos JSON)
+contactos = [
+    {
+        'nombre': 'Andres',
+        'email': 'andres@andres.com'
+    },
+    {
+        'nombre': 'Jon',
+        'email': 'jon@andres.com'
+    },
+    {
+        'nombre': 'Luis',
+        'email': 'luis@luis.com'
+    }
+]
+
+
+print(contactos)
+print(contactos[0]['nombre'])
+print(contactos[0]['email'])
+contactos[0]['nombre'] = "Andresito"
+print(contactos[0]['nombre'])
+
+print("\nListado de contactos: ")
+
+for contacto in contactos:
+    print(f"Nombre: {contacto['nombre']}")
+    print(f"email: {contacto['email']}")
+
+
+
+
+
