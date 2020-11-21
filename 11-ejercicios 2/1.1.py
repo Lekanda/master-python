@@ -11,7 +11,7 @@ Ejercicio 1.1
 
 """
 #***** MODO 1 *********
-numeros = [1,8,3,2,6,7,4,5]
+numeros = [1,18,3,2,26,77,4,85]
 
 
 #***** MODO 2 *********
@@ -57,5 +57,17 @@ print(len(numeros))
 
 print("************")
 
-# 5- Buscar un elemneto en la lista
-print(numeros.index(1))
+#*** 5- Buscar un elemneto en la lista ****
+# print(numeros.index(1))
+
+busqueda = int(input("Introduce el numero: "))
+
+comprobar = isinstance(busqueda, int)
+while not comprobar or busqueda <= 0:
+    busqueda = int(input("Introduce el numero: "))
+else:
+    print(f"Has introducido el {busqueda}")
+print(f"#### Buscar en la ista el numero {busqueda} ####")
+
+search= numeros.index(busqueda)
+print(f"El numero buscado existe en la lista es el indice : {search}")
