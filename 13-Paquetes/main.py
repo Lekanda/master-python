@@ -1,7 +1,9 @@
 """
                 PAQUETES
                 --------
--                 
+
+- Para descargar paquetes en internet ver el link:
+            https://pypi.org/                 
 """
 print("Probando paquetes")
 
