@@ -59,3 +59,28 @@ print(fecha_personalizada)
 
 print(datetime.datetime.now().timestamp())
 print(datetime.datetime.now().time())
+
+
+
+
+
+# MODULO DE MATEMATICAS
+import math
+# Raiz cuadrada de 10 
+print("Raiz cuadrada de 10: ",math.sqrt(10))
+#Numero Pi
+print("Numero pi: ", math.pi)
+print("Numero pi: ", float(math.pi))
+# Redondea al alta
+print("Redondear: ", math.ceil(6.2369587))
+# Redondea a la baja
+print("Redondear: ", math.floor(6.2369587))
+
+
+
+
+
+# MODULO RANDOM (Aleatorio)
+import random
+
+print("Numero al azar entre 15 y 100: ", random.randint(15,100))
