@@ -34,3 +34,28 @@ print(calculadora(2,2,"-"))
 from mimodulo import *
 print(holaMundo("Andres"))
 print(calculadora(2,2,"+"))
+
+
+
+
+# MODULO DE FECHAS
+import datetime
+
+# Nos da la fecha
+print(datetime.date.today())
+
+# Nos da la fecha y hora
+fecha_completa= datetime.datetime.now()
+print(fecha_completa)
+print(fecha_completa.year)
+print(fecha_completa.day)
+print(fecha_completa.month)
+print(fecha_completa.second)
+
+fecha_personalizada = fecha_completa.strftime("%d/%m/%y, /%b/%B/%M/%m/%H/%h")
+print(fecha_personalizada)
+# En este link estan todos los modificadores de fecha personalizada
+                # https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
+
+print(datetime.datetime.now().timestamp())
+print(datetime.datetime.now().time())
