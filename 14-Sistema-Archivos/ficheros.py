@@ -44,9 +44,18 @@ for frase in lista:
 
 
 # Copiar un archivo. UTILZAMOS "SHUTIL"
+"""
 ruta_original=str(pathlib.Path().absolute()) + "/fichero_texto.txt"
 ruta_nueva=str(pathlib.Path().absolute()) + "/fichero_copiado.txt"
 ruta_alternativa="../07-Ejercicios/fichero_copiado_prueba55.txt"
 # ruta_alternativa2=str(pathlib.Path().absolute())+"/../07-Ejercicios/fichero_copiado_prueba2.txt"
 # print(ruta_alternativa2)
 shutil.copyfile(ruta_original,ruta_alternativa)
+"""
+
+# Mover
+ruta_original=str(pathlib.Path().absolute()) + "/fichero_copiado.txt"
+ruta_nueva=str(pathlib.Path().absolute()) + "/fichero_copiado_NUEVO.txt"
+
+
+shutil.move(ruta_original,ruta_nueva)
