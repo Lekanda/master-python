@@ -1,5 +1,6 @@
 from io import open
 import pathlib
+import shutil
 
 
 
@@ -39,3 +40,13 @@ for frase in lista:
     lista_frase = frase.split() # Crea una lista con cada elemento
     print(lista_frase)
     # print("-"+frase.capitalize())
+
+
+
+# Copiar un archivo. UTILZAMOS "SHUTIL"
+ruta_original=str(pathlib.Path().absolute()) + "/fichero_texto.txt"
+ruta_nueva=str(pathlib.Path().absolute()) + "/fichero_copiado.txt"
+ruta_alternativa="../07-Ejercicios/fichero_copiado_prueba55.txt"
+# ruta_alternativa2=str(pathlib.Path().absolute())+"/../07-Ejercicios/fichero_copiado_prueba2.txt"
+# print(ruta_alternativa2)
+shutil.copyfile(ruta_original,ruta_alternativa)
