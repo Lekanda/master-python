@@ -59,15 +59,17 @@ print("************")
 
 #*** 5- Buscar un elemneto en la lista ****
 # print(numeros.index(1))
-
-busqueda = int(input("Introduce el numero: "))
-
-comprobar = isinstance(busqueda, int)
-while not comprobar or busqueda <= 0:
+try:
     busqueda = int(input("Introduce el numero: "))
-else:
-    print(f"Has introducido el {busqueda}")
-print(f"#### Buscar en la ista el numero {busqueda} ####")
 
-search= numeros.index(busqueda)
-print(f"El numero buscado existe en la lista es el indice : {search}")
+    comprobar = isinstance(busqueda, int)
+    while not comprobar or busqueda <= 0:
+        busqueda = int(input("Introduce el numero: "))
+    else:
+        print(f"Has introducido el {busqueda}")
+    print(f"#### Buscar en la lista el numero {busqueda} ####")
+
+    search= numeros.index(busqueda)
+    print(f"El numero buscado existe en la lista es el indice : {search}")
+except:
+    print("El numero no esta en la lista, lo siento!!")
