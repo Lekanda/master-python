@@ -54,8 +54,38 @@ shutil.copyfile(ruta_original,ruta_alternativa)
 """
 
 # Mover
+"""
 ruta_original=str(pathlib.Path().absolute()) + "/fichero_copiado.txt"
 ruta_nueva=str(pathlib.Path().absolute()) + "/fichero_copiado_NUEVO.txt"
 
-
 shutil.move(ruta_original,ruta_nueva)
+"""
+
+
+
+# ELIMINAR un archivo
+import os
+"""
+ruta_nueva=str(pathlib.Path().absolute()) + "/fichero_copiado_NUEVO.txt"
+os.remove(ruta_nueva)
+"""
+
+
+
+
+
+# Comprobar sí existe
+import os.path
+# Para coger una ruta de un archivo
+print(os.path.abspath("/"))
+print(os.path.abspath("./"))
+print(os.path.abspath("../"))
+# Una forma de hacerlo
+ruta_comprobar = os.path.abspath("./") + "/fichero_texto.txt"
+# Otra forma de hacerlo
+ruta_comprobar="./fichero_texto.txt"
+print(ruta_comprobar)
+if os.path.isfile(ruta_comprobar):
+    print("El fichero existe")
+else:
+    print("El fichero no existe")
