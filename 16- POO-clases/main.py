@@ -38,6 +38,10 @@ class Coche:
     def setModelo(self, modelo):
         self.modelo=modelo
 
+        # Cambia marca de coche
+    def setMarca(self, marca):
+        self.marca=marca
+
         # Coge el  modelo de coche
     def getModelo(self):
         return self.modelo
@@ -58,6 +62,7 @@ class Coche:
 
 
 # Crear objetos/ Instanciar la clase
+print("************Coche 1**********")
 coche = Coche()
 
 print(coche)
@@ -83,8 +88,16 @@ print(coche.color)
 
 """
 - GETTER para coger datos y SETTER para asignar un valor nuevo o modificado
-
     *   print(coche.getVelocidad()) => Metodo GETTER
-
-    *   coche.acelerar() => Metodo SETTER
 """
+
+print("***********Coche 2****************")
+# CRear mas objetos
+coche2=Coche()
+coche2.setColor("Verde")
+coche2.setModelo("Cobra")
+coche2.setMarca("Audi")
+
+print(coche2.marca,coche2.getModelo(),coche2.getColor())
+print(type(coche2))
+
