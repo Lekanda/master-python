@@ -1,3 +1,17 @@
+"""
+                        VISIBILIDAD
+                        -----------
+- Dentro de una clase podemos crear nuestros metodos y propiedades, pero estas deben ser o publicas o privadas, en funcion de la visibilidad que queramos que tenga en el resto del codigo.
+
+    - PUBLICOS: Son por defecto
+
+    - PRIVADAS: Son accesibles desde dentro de la clase. Es obligatorio usar getter para extraer los datos
+        - Para declarar un atributo privado poner delante del nombre de archivo '__'. Ver en 'coche.py'
+
+"""
+
+
+
 # Importar la clase Coche
 from coche import Coche 
 
@@ -18,3 +32,16 @@ if type(carro3) == Coche:
     print("Es un objeto tipo COCHE")
 else:
     print("No es un objeto tipo COCHE")
+
+
+#Visibilidad. Explicacion arriba
+    # Funciona por que es un propiedad publico
+print(carro.soy_publico)
+    # Falla por que es un propiedad privado
+# print(carro.__soy_privado)
+    # De esta forma accedemos a un metodo de una propiedad privada
+print(carro.getPrivado())
+
+
+
+

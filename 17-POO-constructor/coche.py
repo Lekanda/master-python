@@ -7,6 +7,9 @@ class Coche:
     velocidad=300
     caballaje=500
     plazas=4
+    soy_publico="Hola soy un atributo publico"
+    # Propiedad privada
+    __soy_privado = "Hola soy un atributo privado"
 
     # *** Constructor***
     def __init__(self,color,marca,modelo,velocidad,caballaje,plazas):
@@ -72,6 +75,15 @@ class Coche:
         info += "\n Marca: "+self.getMarca()
         info += "\n Modelo: "+self.getModelo()
         info += "\n Velocidad: "+str(self.getVelocidad())
-
         return info
-    #Fin de definicion de la CLASE
+
+
+
+        # Metodo que trae la propiedad '__soy_privado'
+    def getPrivado(self):
+        return self.__soy_privado
+
+
+
+
+    #Fin de definicion de la CLASE******************
