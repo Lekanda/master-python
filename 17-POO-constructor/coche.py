@@ -20,8 +20,6 @@ class Coche:
 
 
 
-
-
     # ***Metodos , son acciones que hace el objeto***
         # Obtiene color de coche
     def getColor(self):
