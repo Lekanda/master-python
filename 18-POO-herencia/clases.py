@@ -3,7 +3,8 @@
                         --------
 - La posibilidad de compartir atributos y metodos entre clases
 - La 'clase hija' hereda de la 'clase padre'
-- 
+
+- super().__init__() => No se puede aceder a los datos del constructor de la clase de la que se hereda.Ya que los datos del constructor solo se pueden ver dentro de la clase del constructor. Para poder acceder utilizamos super. 
 """
 # ****CLASE PERSONA****
 class Persona:
@@ -55,7 +56,7 @@ class Informatico(Persona):
 
     # CONSTRUCTOR
     def __init__(self):
-        self.lenguajes="HTML, CSS, JavaSript*, PHP"
+        self.lenguajes="HTML, CSS, JavaSript, PHP"
         self.experiencia=5
 
     def getLenguajes(self):
@@ -72,3 +73,13 @@ class Informatico(Persona):
         return "He reparado el PC"
     
 # FIN de clase Informatico ********************
+
+
+class TecnicoRedes(Informatico):
+    # Funcion constructora
+    def __init__(self):
+        super().__init__() # Carga los datos del constructor del padre
+        self.auditarRedes = 'experto'
+        self.experienciaRedes =15
+    def auditoria(self):
+        return "Estoy Auditando una red"  
