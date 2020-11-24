@@ -19,7 +19,7 @@ cursor.execute("CREATE TABLE IF NOT EXISTS productos("+
         "precio int(255)"
 ")")
 
-# Cerrar la conexion
+# Guardar Datos
 conexion.commit()
 
 # Cerrar la conexion
