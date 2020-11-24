@@ -11,21 +11,57 @@ conexion=sqlite3.connect("prueba.db")
 # Crear cursor. Es lo que permite hacer las consultas***
 cursor=conexion.cursor()
 
-# Crear una tabla***
-cursor.execute("CREATE TABLE IF NOT EXISTS productos("+
-        "id INTEGER PRIMARY KEY AUTOINCREMENT,"+ # OBLIGATORIO ASI
-        "titulo VARCHAR(255), "+
-        "descripcion TEXT,"+
-        "precio int(255)"
-")")
+
+
+
+#########################
+# *** CREAR UNA TABLA ***
+#########################
+#Modo 1
+# cursor.execute("CREATE TABLE IF NOT EXISTS productos("+
+#         "id INTEGER PRIMARY KEY AUTOINCREMENT,"+ # OBLIGATORIO ASI
+#         "titulo VARCHAR(255), "+
+#         "descripcion TEXT,"+
+#         "precio int(255)"
+# ")")
+# Modo 2 (Mejor)
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS productos(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        titulo varchar(255),
+        descripcion text,
+        precio int(255)
+);
+""")
+
 # Guardar Datos***
 conexion.commit()
 
-# INSERTAR DATOS***
-cursor.execute("INSERT INTO productos VALUES (null,'Super producto','Es un producto muy bueno',200 );")
-conexion.commit() # Guardar Datos
 
-# LEER LOS DATOS DE LA TABLA 'PRODUCTOS'***
+
+
+
+###################
+# INSERTAR DATOS***
+# #################
+# Modo 1
+# cursor.execute("INSERT INTO productos VALUES (null,'Super producto','Es un producto muy bueno',200 );")
+# conexion.commit() # Guardar Datos
+# Modo 2 (Mejor)
+# cursor.execute("""INSERT INTO productos VALUES (null,
+# 'Super producto',
+# 'Es un producto muy bueno',
+# 210 
+# );""")
+# conexion.commit() # Guardar Datos
+
+
+
+
+
+################################################
+# *** LEER LOS DATOS DE LA TABLA 'PRODUCTOS' ***
+################################################
 cursor.execute("SELECT * FROM productos;")
 # print(cursor) # nos da un objeto pero de esta forma no se ven los datos
 productos=cursor.fetchall() # Metemos en 'productos' los datos que ya son visibles
@@ -37,11 +73,14 @@ for producto in productos: # Recorre los objetos de la DDBB
         print("\n")
 
 cursor.execute("SELECT titulo FROM productos;")
-producto=cursor.fetchone() # Nos da el primer producto de la DDBB
+producto=cursor.fetchone() # Nos da el titulo del primer producto de la DDBB
 print(producto)
 
 
 
-# CERRAR LA CONEXION***
+
+############################
+# *** CERRAR LA CONEXION ***
+############################
 conexion.close()
 
