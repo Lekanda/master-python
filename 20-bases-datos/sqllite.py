@@ -59,14 +59,53 @@ conexion.commit()
 
 
 
-################################################
-# *** LEER LOS DATOS DE LA TABLA 'PRODUCTOS' ***
-################################################
-cursor.execute("SELECT * FROM productos;")
+
+#####################
+#*** BORRAR DATOS ***
+#####################
+# cursor.execute("DELETE FROM productos") # CUIDADO: BORRA TODOS LOS DATOS
+
+
+
+
+
+###########################################
+#*** INSERTAR MUCHOS REGISTROS A LA VEZ ***
+###########################################
+productos = [
+        ("Ordenador Portatil", "Buen PC", 700),
+        ("Tablet", "Es una gran Tableta", 400),
+        ("iPhone", "Movil de ultima generacion", 1700),
+        ("Smart Watch", "Un gran Smart Watch", 100)
+]
+cursor.executemany("INSERT INTO productos VALUES(null,?,?,?)", productos) # La var productos es el Array de objetos
+conexion.commit()
+
+
+
+
+
+
+#####################
+#*** UPDATE DATOS ***
+#####################
+cursor.execute("UPDATE productos SET precio = 1900  WHERE precio = 1700")
+
+
+
+
+
+
+
+##############################################
+# *** LISTAR DATOS DE LA TABLA 'PRODUCTOS' ***
+##############################################
+cursor.execute("SELECT * FROM productos WHERE precio >= 1000;")
 # print(cursor) # nos da un objeto pero de esta forma no se ven los datos
-productos=cursor.fetchall() # Metemos en 'productos' los datos que ya son visibles
+productos=cursor.fetchall() # Metemos en 'productos' los datos que se pueden ver
 # print(productos) # Imprimir productos, ya visibles
 for producto in productos: # Recorre los objetos de la DDBB
+        print("ID:", producto[0])
         print(producto)
         print(producto[1]) # Coge solo el primer campo del registro
         print("Nombre Producto:",producto[1]) # Coge solo el primer campo del registro
@@ -77,6 +116,7 @@ producto=cursor.fetchone() # Nos da el titulo del primer producto de la DDBB
 print(producto)
 
 
+# cursor.execute("DELETE FROM productos")
 
 
 ############################
