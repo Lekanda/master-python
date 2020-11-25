@@ -10,6 +10,7 @@
     - Leer Nota
     - Borrar Nota
 """
+from usuarios import acciones
 
 # al  meter """  podemos poner varias lineas:
 print("""
@@ -17,15 +18,12 @@ Acciones disponibles:
     - registro
     - login
 """)
+
+hazEl = acciones.Acciones() # Instanciar la clase Acciones
+
 accion = input("¿Que quieres hacer?: ")
 
 if accion == "registro":
-    print("\nOk!! Vamos a registrarte en el sitema...")
-    nombre = input("¿Cual es tu nombre?: ")
-    apellidos = input("¿Cuales son tus apellidos?: ")
-    email =  input("¿Cual es tu email?: ")
-    password = input("Introduce tu password: ")
+    hazEl.registro()
 elif accion == "login":
-    print("Vale; Identificate en el sistema!!")
-    email =  input("¿Cual es tu email?: ")
-    password = input("Introduce tu password: ")
+    hazEl.login()
