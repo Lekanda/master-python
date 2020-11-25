@@ -11,7 +11,15 @@
     - Borrar Nota
 """
 
+# al  meter """  podemos poner varias lineas:
+print("""
+Acciones disponibles:
+    - registro
+    - login
+""")
+accion = input("¿Que quieres hacer?: ")
 
-
-
-
+if accion == "registro":
+    print("Ok!! Vamos a registrarte en el sitema...")
+elif accion == "login":
+    print("Vale; Identificate en el sistema!!")
