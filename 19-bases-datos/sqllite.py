@@ -6,7 +6,7 @@ sqlite: es una version ligera de SQL que trae incorporado Python
 import sqlite3
 
 # Conexion a SQLite***
-conexion=sqlite3.connect("prueba.db")
+conexion=sqlite3.connect('./19-bases-datos/pruebas.db')
 
 # Crear cursor. Es lo que permite hacer las consultas***
 cursor=conexion.cursor()
