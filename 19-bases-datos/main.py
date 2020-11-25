@@ -22,7 +22,7 @@ cursor.execute("CREATE DATABASE IF NOT EXISTS master_python")
 """
 # Comprobar que se ha creado la DB
 cursor.execute("SHOW DATABASES")
-# for db in cursor:
+# for db in cursor: # Itera en la  DB, las abiertas en MySQL
 #     print(db)
 """
 # Crear Tablas
@@ -37,6 +37,19 @@ CONSTRAINT pk_vehiculo PRIMARY KEY(id)
 """)
 
 cursor.execute("SHOW TABLES")
-
 for table in cursor:
     print(table) # Nos da las tablas creadas en la DB creada
+
+
+
+# Insertar datos en la DB 'vehiculos' y en la tabla 'vehiculo'
+# cursor.execute("INSERT INTO vehiculos VALUES(null,'Opel','Corsa',1000)") # Inserta un registro
+coches = [
+    ('Opel','Astra',1000),
+    ('Opel','corsa',1500),
+    ('Mercedes','s400',10000),
+    ('BMW','s5000',20000),
+    ('KIA','Sandero',8000)
+]
+# cursor.executemany("INSERT INTO vehiculos VALUES(null,%s,%s,%s)", coches) # Inserta muchos registros a la vez
+database.commit() # Guarda en la DB
