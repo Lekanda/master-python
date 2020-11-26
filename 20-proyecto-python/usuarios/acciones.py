@@ -7,6 +7,8 @@ class Acciones:
         email =  input("¿Cual es tu email?: ")
         password = input("Introduce tu password: ")
 
+        
+
     def login(self):
         print("Vale; Identificate en el sistema!!")
         email =  input("¿Cual es tu email?: ")
