@@ -38,5 +38,17 @@ class Usuario:
         
 
 
-    def indentificar(self):
-        return self.nombre
+    def identificar(self):
+        #**Consulta para comprobar sí email y pass son OK
+        sql="SELECT * FROM usuarios WHERE email=%s AND password =%s"
+        # **Cifrar la contraseña
+        cifrado = hashlib.sha256()
+        cifrado.update(self.password.encode('utf8'))
+            # encode('utf8') => Convierte a Bytes el pass , que es lo que espera 'hashlib'
+        # **Datos para la consulta
+        usuario = (self.email,cifrado.hexdigest())
+
+        cursor.execute(sql,usuario)
+        result = cursor.fetchone()
+
+        return result
