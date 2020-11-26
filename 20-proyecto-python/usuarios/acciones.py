@@ -1,4 +1,7 @@
 import usuarios.usuario as modelo
+import os
+
+clear = lambda: os.system('cls')
 
 class Acciones:
 
@@ -23,9 +26,10 @@ class Acciones:
         print("Vale; Identificate en el sistema!!")
 
         try:
+            clear()
             email =  input("¿Cual es tu email?: ")
             password = input("Introduce tu password: ")
-
+            clear()
             usuario = modelo.Usuario('','',email,password)
             login = usuario.identificar()
 
@@ -38,4 +42,23 @@ class Acciones:
             print(f"Login incorrecto intentalo mas tarde")
 
     def proximasAcciones(self, usuario):
-        return None
+        print("""
+        Acciones disponibles:
+        - Crear una nota (crear)
+        - Mostrar notas (mostrar)
+        - Eliminar notas (eliminar)
+        - Salir (salir)
+        """)
+        accion = input("¿Que quieres hacer?: ")
+        if accion == 'crear':
+            print("Vamos a crear una Nota")
+            self.proximasAcciones(usuario)
+        elif accion == "mostrar":
+            print("Vamos a mostrar una Nota")
+            self.proximasAcciones(usuario)
+        elif accion == "eliminar":
+            print("Vamos a eliminar una Nota")
+            self.proximasAcciones(usuario)
+        elif accion == "salir":
+            print(f"\nHasta pronto {usuario[1]}")
+            exit()
