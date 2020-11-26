@@ -11,11 +11,13 @@ class Acciones:
 
         usuario = modelo.Usuario(nombre,apellidos,email,password)
         registro = usuario.registrar()
+        print(f"Registro es : {registro}")
+        print(registro[1])
 
         if registro[0] >=1:
-            print(f"El Usuario {registro[1].nombre} se ha registrado!!")
+            print(f"\nEl Usuario {registro[1].nombre} se ha registrado!!")
         else:
-            print("NO te has registrado correctamente")
+            print("\nNO te has registrado correctamente")
 
     def login(self):
         print("Vale; Identificate en el sistema!!")
