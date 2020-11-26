@@ -1,4 +1,5 @@
 import mysql.connector
+import datetime
 
 ##################
 # Conexion a la DB
@@ -13,16 +14,11 @@ database = mysql.connector.connect(
 #¿La conexion ha sido correcta?
 # print(database) 
 
-
-
 #--------------------------------------------
 # Cursor: Nos permite ejecutar las consultas
 cursor = database.cursor(buffered=True)
 # buffered=True => Nos permite hacer muchas consultas utilizando el mismo cursor
 #--------------------------------------------
-
-
-
 
 
 
@@ -35,7 +31,14 @@ class Usuario:
         self.password = password
 
     def registrar(self):
-        return self.nombre
+        fecha = datetime.datetime.now()
+        sql = "INSERT INTO usuarios VALUES(null, %s, %s, %s, %s,%s)"
+        usuario = (self.nombre, self.apellidos, self.email, self.password, fecha)
+
+        cursor.execute(sql, usuario)
+        database.commit()
+
+        return [cursor.rowcount, self]
 
     def indentificar(self):
         return self.nombre
