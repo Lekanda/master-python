@@ -1,6 +1,7 @@
 import usuarios.usuario as modelo
-import os
+import notas.acciones 
 
+import os
 clear = lambda: os.system('cls')
 
 class Acciones:
@@ -50,8 +51,9 @@ class Acciones:
         - Salir (salir)
         """)
         accion = input("¿Que quieres hacer?: ")
-        if accion == 'crear':
-            print("Vamos a crear una Nota")
+        hazEl = notas.acciones.Acciones()
+        if accion == "crear":
+            hazEl.crear(usuario)
             self.proximasAcciones(usuario)
         elif accion == "mostrar":
             print("Vamos a mostrar una Nota")

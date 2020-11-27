@@ -10,6 +10,6 @@ class Acciones :
         guardar = nota.guardar()
 
         if guardar[0] >= 1:
-            print(f"\n Perfecto has guardado la Nota: {nota.titulo}")
+            print(f"\nPerfecto has guardado la Nota: {nota.titulo}")
         else:
             print(f"\nNo se ha guardado la nota, lo siento {usuario[1]}")
