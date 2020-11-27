@@ -1,8 +1,6 @@
 import usuarios.usuario as modelo
 import notas.acciones 
 
-import os
-clear = lambda: os.system('cls')
 
 class Acciones:
 
@@ -27,10 +25,8 @@ class Acciones:
         print("Vale; Identificate en el sistema!!")
 
         try:
-            clear()
             email =  input("¿Cual es tu email?: ")
             password = input("Introduce tu password: ")
-            clear()
             usuario = modelo.Usuario('','',email,password)
             login = usuario.identificar()
 

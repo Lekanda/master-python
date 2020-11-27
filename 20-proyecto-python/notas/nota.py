@@ -13,7 +13,7 @@ class Nota:
 
 
     def guardar(self):
-        sql = "INSERT INTO notas VALUES(null,%s,%s,%s, NOW()"
+        sql = "INSERT INTO notas VALUES(null,%s,%s,%s, NOW())"
         nota = (self.usuario_id,self.titulo,self.descripcion)
 
         cursor.execute(sql, nota)
