@@ -49,13 +49,13 @@ class Acciones:
         accion = input("¿Que quieres hacer?: ")
         hazEl = notas.acciones.Acciones()
         if accion == "crear":
-            hazEl.crear(usuario)
+            hazEl.crear(usuario) # El 'usuario' que se pasa es para saber que usuario esta logueado
             self.proximasAcciones(usuario)
         elif accion == "mostrar":
             hazEl.mostrar(usuario)
             self.proximasAcciones(usuario)
         elif accion == "eliminar":
-            print("Vamos a eliminar una Nota")
+            hazEl.borrar(usuario)
             self.proximasAcciones(usuario)
         elif accion == "salir":
             print(f"\nHasta pronto {usuario[1]}")
