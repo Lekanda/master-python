@@ -1,9 +1,3 @@
-"""
-                Parametros de .CONFIG()
-                -----------------------
-- fg => Color de letra                
-"""
-
 from tkinter import *
 
 
@@ -33,6 +27,5 @@ texto.config(
     cursor="spider" # Al poner el raton encima de este elemento cambia el simbolo del Raton: circle, arrow, clock, spider
 )
 texto.pack(anchor=SE)
-
 
 ventana.mainloop()
