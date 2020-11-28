@@ -70,3 +70,5 @@ programa.cargar()
 programa.addTexto("Hola como estas??")
 programa.addTexto("La lluvia en Sevilla es una maravilla")
 programa.mostrar()
+
+# Para cambiar la forma en que se ejecuta el archivo, es dcir, para que solo ejecute la ventana sin python por detras. Cambiaremos la extension a .pyw
