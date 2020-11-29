@@ -10,6 +10,11 @@ ventana.config(
 def getDato():
     resultado.set(dato.get())
 
+    if len(resultado.get())>=1:
+        texto_recogido.config(
+        bg="green",
+        fg="white"
+    )
 
 
 dato = StringVar()
@@ -20,11 +25,7 @@ Entry(ventana, textvariable=dato).pack(anchor=NW)
 
 Label(ventana, text="Dato Recogido: ").pack(anchor=NW)
 texto_recogido=Label(ventana, textvariable=resultado)
-texto_recogido.config(
-    bg="green",
-    fg="white"
 
-)
 texto_recogido.pack(anchor=NW)
 
 Button(ventana, text="Mostrar Dato", command=getDato).pack(anchor=NW)
