@@ -4,8 +4,6 @@ ventana= Tk()
 ventana.geometry("700x400")
 ventana.title("Formularios en Tkinter")
 
-
-
 # Texto encabezado
 encabezado=Label(ventana, text="Formularios con Tkinter")
 encabezado.config(
@@ -57,8 +55,6 @@ Label(ventana).grid(row=4, column=1)
 boton = Button(ventana, text="Enviar")
 boton.grid(row=5, column=1, sticky=W, padx=5,pady=5)
 boton.config(padx=8,pady=8, bg="green", fg="white")
-
-
 
 
 ventana.mainloop()
