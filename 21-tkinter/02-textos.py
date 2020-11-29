@@ -18,7 +18,8 @@ texto.pack(anchor=E)
 def pruebas(nombre,apellidos,pais):
     return f"Hola {nombre} {apellidos} eres de {pais}"
 
-texto = Label(ventana, text = pruebas("Andres", "Bernaola", "Espña"))
+texto = Label(ventana, text = pruebas(pais="Espña",nombre="Andres", apellidos="Bernaola", ))
+# si igualamamos los parametros con datos que se pasan a la funcion 'pruebas' no hace falta seguir un orden a la hora de declarar los parametros como esta en el ejemplo. Esto es util cuando hay muchos parametros que pasar
 
 texto.config(
     # justify=RIGHT, # Justifica , pero solo sobre el texto, no se nota
