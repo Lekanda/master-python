@@ -12,12 +12,19 @@ encabezado.config(
     fg="white",
     bg="darkgray",
     font=("Cambria",18),
-    padx=7,
-    pady=7
+    padx=10,
+    pady=10
 )
-encabezado.pack(side=LEFT,anchor=NW, fill=X, expand=YES)
+encabezado.grid(row=0, column=0, columnspan=2, sticky=W)
 
 
+
+#Label para el campo
+label = Label(ventana, text="Nombre")
+label.grid(row=1,column=0,padx=5,pady=5, sticky=W)
+# Campo de texto
+campo_texto = Entry(ventana)
+campo_texto.grid(row=1, column=1, sticky=W, padx=5,pady=5)
 
 
 
