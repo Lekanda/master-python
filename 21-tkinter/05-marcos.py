@@ -20,8 +20,21 @@ marco.config(
 #relief => tipo de borde: flat, groove, raised, ridge, solid, sunken. Tambien vale 'relief=SUNKEN'
 marco.pack(side=LEFT, anchor=W)
 # Se puede jugar con 'side' y 'anchor'; Con side le das la posicion y con anchor la ajustas
-Label(marco, text="Primer marco de prueba").pack(side= LEFT ,anchor=CENTER) # Introducir texto en 'ventana' y ubicarlo en ella
+texto = Label(marco, text="Primer marco de prueba")
+texto.config(
+    bg="red",
+    fg="white",
+    font=("Arial", 9),
+    # width=50,
+    # height=5,
+    # anchor=SE # Tambien se puede poner desde aqui
+    bd=3,
+    relief=SOLID
+)
+texto.pack(side=BOTTOM,fill=Y,expand=YES, anchor=SE)
 marco.pack_propagate(False) # NO cambia el tamaño de la ventana
+
+
 
 
 #********** MARCO 2  de MARCO Padre 1 ***********
