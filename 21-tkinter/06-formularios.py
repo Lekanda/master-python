@@ -38,8 +38,8 @@ campo_texto.config(justify="right", state="normal")
 
 #********** CAMPO TXT GRANDE ****************
 #Label para el descripcion
-label = Label(ventana, text="Descrpción")
-label.grid(row=3,column=0, sticky=NW, padx=5,pady=5)
+label = Label(ventana, text="Descripcion")
+label.grid(row=3,column=0, sticky=N, padx=5,pady=5)
 # Campo txt grande
 campo_grande = Text(ventana)
 campo_grande.grid(row=3,column=1,sticky=W)
@@ -51,6 +51,14 @@ campo_grande.config(
     padx=5,
     pady=5
 )
+
+# Boton
+Label(ventana).grid(row=4, column=1)
+boton = Button(ventana, text="Enviar")
+boton.grid(row=5, column=1, sticky=W, padx=5,pady=5)
+boton.config(padx=8,pady=8, bg="green", fg="white")
+
+
 
 
 ventana.mainloop()
