@@ -34,8 +34,23 @@ label.grid(row=2,column=0, sticky=W, padx=5,pady=5)
 # Campo de texto
 campo_texto = Entry(ventana)
 campo_texto.grid(row=2, column=1, sticky=W, padx=5,pady=5)
-campo_texto.config(justify="right", state="disabled")
+campo_texto.config(justify="right", state="normal")
 
+#********** CAMPO TXT GRANDE ****************
+#Label para el descripcion
+label = Label(ventana, text="Descrpción")
+label.grid(row=3,column=0, sticky=NW, padx=5,pady=5)
+# Campo txt grande
+campo_grande = Text(ventana)
+campo_grande.grid(row=3,column=1,sticky=W)
+campo_grande.config(
+    width=30, 
+    height=5, 
+    state="normal",
+    font=("Arial", 12),
+    padx=5,
+    pady=5
+)
 
 
 ventana.mainloop()
