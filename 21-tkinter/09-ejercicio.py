@@ -17,17 +17,38 @@ ventana.config(
 )
 
 def sumar():
-    resultado.set(float(numero1.get()) + float(numero2.get()))
-    mostrarResultado()
+    try:
+        resultado.set(float(numero1.get()) + float(numero2.get()))
+        mostrarResultado()
+    except:
+        messagebox.showerror("Error tipo Datos", "Introduce solo numeros")
+        numero1.set("")
+        numero2.set("")
 def restar():
-    resultado.set(float(numero1.get()) - float(numero2.get()))
-    mostrarResultado()
+    try:
+        resultado.set(float(numero1.get()) - float(numero2.get()))
+        mostrarResultado()
+    except:
+        messagebox.showerror("Error al meter numeros", "PorFavor; introduce solo numeros")
+        numero1.set("")
+        numero2.set("")
 def multiplicar():
-    resultado.set(float(numero1.get()) * float(numero2.get()))
-    mostrarResultado()
+    try:
+        resultado.set(float(numero1.get()) * float(numero2.get()))
+        mostrarResultado()
+    except:
+        messagebox.showerror("Error al meter numeros", "PorFavor; introduce solo numeros")
+        numero1.set("")
+        numero2.set("")
 def dividir():
-    resultado.set(float(numero1.get()) / float(numero2.get()))
-    mostrarResultado()
+    try:
+        resultado.set(float(numero1.get()) / float(numero2.get()))
+        mostrarResultado()
+    except:
+        messagebox.showerror("Error al meter numeros", "PorFavor; introduce solo numeros")
+        numero1.set("")
+        numero2.set("")
+
 def mostrarResultado ():
     messagebox.showinfo("Resultado", f"El resultado es : {resultado.get()}")
     numero1.set("")
