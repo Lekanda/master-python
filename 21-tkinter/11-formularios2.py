@@ -59,8 +59,29 @@ mostrar = Label(ventana)
 mostrar.grid(row=4, column=0)
 
 # Radio Buttons
+def marcar():
+    marcado.config(text=opcion.get())
+opcion=StringVar()
+opcion.set(None)
 
+Label(ventana, text="¿Cual es tu genero?").grid(row=5, column=0,sticky=W)
+Radiobutton(
+    ventana,
+    text="Masculino",
+    value="Masculino",
+    variable=opcion,
+    command=marcar
+).grid(row=6, column=0,sticky=W)
+Radiobutton(
+    ventana,
+    text="Femenino",
+    value="Femenino",
+    variable=opcion,
+    command=marcar
+).grid(row=7, column=0,sticky=W)
 
+marcado = Label(ventana)
+marcado.grid(row=8)
 # Option Menu
 
 
