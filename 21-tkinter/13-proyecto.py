@@ -22,7 +22,6 @@ ventana.resizable(0,0)
 
 # Pantallas
 def home():
-    # Montar pantalla
     home_label.config(
         fg="white",
         bg="black",
@@ -55,7 +54,6 @@ def add():
 
 
 def info():
-    
     info_label.config(
         fg="white",
         bg="black",
