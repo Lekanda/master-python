@@ -2,7 +2,7 @@ from tkinter import *
 
 
 ventana = Tk()
-ventana.geometry("800x300")
+ventana.geometry("800x500")
 
 
 
@@ -58,7 +58,7 @@ Checkbutton(
 mostrar = Label(ventana)
 mostrar.grid(row=4, column=0)
 
-# Radio Buttons
+# Radio Buttons ( Solo se puede marcar una opcion)
 def marcar():
     marcado.config(text=opcion.get())
 opcion=StringVar()
@@ -82,7 +82,35 @@ Radiobutton(
 
 marcado = Label(ventana)
 marcado.grid(row=8)
+
+
+
+
+
 # Option Menu
+def seleccionar():
+    seleccionado.config(text=opcion.get())
+    
+
+opcion=StringVar()
+
+opcion.set("Opcion 1") # Por defecto
+
+Label(ventana, text="Selecciona una opcion: ").grid(row=5, column=1,sticky=W)
+select=OptionMenu(ventana, opcion, "Opcion 1", "Opcion 2", "Opcion 3")
+select.grid(row=6, column=1)
+
+Button(ventana, text="Ver", command=seleccionar).grid(row=8, column=1)
+
+
+seleccionado=Label(ventana)
+seleccionado.grid(row=7, column=1)
+
+
+
+
+
+
 
 
 
