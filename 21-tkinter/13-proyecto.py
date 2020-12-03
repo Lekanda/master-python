@@ -51,9 +51,26 @@ def add():
     # Campos del formulario
     add_name_label.grid(row=1,column=0,padx=5,pady=5,sticky='E')
     add_name_entry.grid(row=1,column=1,padx=5,pady=5,sticky='W')
-    # add_price_label.grid(row=2,column=0)
-
-
+    add_price_label.grid(row=2,column=0,padx=5,pady=5,sticky='E')
+    add_price_entry.grid(row=2,column=1,padx=5,pady=5,sticky='W')
+    add_description_label.grid(row=3,column=0,padx=5,pady=5,sticky='NE')
+    add_description_entry.grid(row=3,column=1,padx=5,pady=5,sticky='W')
+    add_description_entry.config(
+        width=30,
+        height=5,
+        font=("Consolas",12),
+        padx=15,
+        pady=15
+    )
+    add_separator.grid(row=4,column=1) # Separador
+    boton.grid(row=5,column=1,sticky='NW')
+    boton.config(
+        padx=7,
+        pady=5,
+        # bg="black",
+        # fg="white",
+        activebackground="green"
+    )
 
     # Ocultar otras Pantallas
     home_label.grid_remove()
@@ -82,11 +99,11 @@ name_data = TK.StringVar()
 price_data = TK.StringVar()
 
 
-# Definir campos de Pantallas(INICIO/HOME)
+# Definir encabezado de Pantallas(INICIO/HOME)
 home_label=TK.Label(ventana, text="Inicio")
 
 
-# Definir campos de Pantallas(ADD)
+# Definir encabezado de Pantallas(ADD)
 add_label=TK.Label(ventana, text="Añadir producto")
 #Campos del formulario
 add_name_label = TK.Label(ventana, text="Nombre del Producto: ")
@@ -95,9 +112,14 @@ add_price_label = TK.Label(ventana, text="Precio del Producto: ")
 add_price_entry = TK.Entry(ventana, textvariable=price_data)
 add_description_label = TK.Label(ventana, text="Descripción:")
 add_description_entry = TK.Text(ventana)
+add_separator = TK.Label()
+# Boton del Formulario
+boton=TK.Button(ventana, text="Guardar")
 
 
-# Definir campos de Pantallas(INFO)
+
+
+# Definir encabezado de Pantallas(INFO)
 info_label=TK.Label(ventana, text="Informacion")
 data_label=TK.Label(ventana, text="Creado por Andres Bernaola")
 
