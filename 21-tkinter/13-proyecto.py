@@ -6,7 +6,7 @@
     - Tamaño fijo (X)
     - Ventana no redimensionable (X)
     - Un Menu superior (Inicio,Añadir, Informacion, Salir) (X)
-    - Diferentes pantallas 
+    - Diferentes pantallas (X)
     - Formulario de añadir productos
     - guardar datos temporalmente
     - MOstrar datos listados en la pantalla 'home'   
@@ -26,7 +26,7 @@ def home():
         fg="white",
         bg="black",
         font=("Arial",30),
-        padx=20,
+        padx=203,
         pady=20
     )
     home_label.grid(row=0, column=0)
@@ -38,14 +38,23 @@ def home():
 
 
 def add():
+    # Encabezado campos formulario
+
     add_label.config(
         fg="white",
         bg="black",
         font=("Arial",30),
-        padx=20,
+        padx=110,
         pady=20
     )
-    add_label.grid(row=0, column=0)
+    add_label.grid(row=0, column=0,columnspan=12)
+    # Campos del formulario
+    add_name_label.grid(row=1,column=0,padx=5,pady=5,sticky='E')
+    add_name_entry.grid(row=1,column=1,padx=5,pady=5,sticky='W')
+    # add_price_label.grid(row=2,column=0)
+
+
+
     # Ocultar otras Pantallas
     home_label.grid_remove()
     info_label.grid_remove()
@@ -58,7 +67,7 @@ def info():
         fg="white",
         bg="black",
         font=("Arial",30),
-        padx=20,
+        padx=145,
         pady=20
     )
     info_label.grid(row=0, column=0)
@@ -68,11 +77,26 @@ def info():
     add_label.grid_remove()
     return True
 
+#Variables importantes
+name_data = TK.StringVar()
+price_data = TK.StringVar()
+
 
 # Definir campos de Pantallas(INICIO/HOME)
 home_label=TK.Label(ventana, text="Inicio")
+
+
 # Definir campos de Pantallas(ADD)
 add_label=TK.Label(ventana, text="Añadir producto")
+#Campos del formulario
+add_name_label = TK.Label(ventana, text="Nombre del Producto: ")
+add_name_entry = TK.Entry(ventana, textvariable=name_data)
+add_price_label = TK.Label(ventana, text="Precio del Producto: ")
+add_price_entry = TK.Entry(ventana, textvariable=price_data)
+add_description_label = TK.Label(ventana, text="Descripción:")
+add_description_entry = TK.Text(ventana)
+
+
 # Definir campos de Pantallas(INFO)
 info_label=TK.Label(ventana, text="Informacion")
 data_label=TK.Label(ventana, text="Creado por Andres Bernaola")
