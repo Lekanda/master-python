@@ -15,7 +15,8 @@
 import tkinter as TK
 # definir ventana
 ventana=TK.Tk()
-ventana.geometry("500x500")
+# ventana.geometry("500x500")
+ventana.minsize("500x500") #Tamaño minimo de la ventana
 ventana.title("Proyecto con TKINTER")
 ventana.resizable(0,0)
 
