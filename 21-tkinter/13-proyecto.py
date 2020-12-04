@@ -8,7 +8,7 @@
     - Un Menu superior (Inicio,Añadir, Informacion, Salir) (X)
     - Diferentes pantallas (X)
     - Formulario de añadir productos (X)
-    - guardar datos temporalmente
+    - guardar datos temporalmente (X)
     - MOstrar datos listados en la pantalla 'home'   
     - Opcion de 'Salir' (X)       
 """
@@ -18,6 +18,8 @@ ventana=TK.Tk()
 ventana.geometry("500x500")
 ventana.title("Proyecto con TKINTER")
 ventana.resizable(0,0)
+
+
 
 
 # Pantallas
@@ -38,9 +40,10 @@ def home():
     return True
 
 
+
+
 def add():
     # Encabezado campos formulario
-
     add_label.config(
         fg="white",
         bg="black",
@@ -73,12 +76,13 @@ def add():
         # fg="white",
         activebackground="green"
     )
-
     # Ocultar otras Pantallas
     home_label.grid_remove()
     info_label.grid_remove()
     data_label.grid_remove()
     return True
+
+
 
 
 def info():
@@ -97,7 +101,22 @@ def info():
     add_label.grid_remove()
     return True
 
+
+def add_product():
+    products.append([
+        name_data.get(),
+        price_data.get(),
+        add_description_entry.get("1.0","end-1c")
+    ])
+    name_data.set("")# despues de guardar borra el nombre del producto en formulario
+    price_data.set("")# despues de guardar borra el precio del producto en formulario
+    add_description_entry.delete("1.0",TK.END)
+    # print(products)
+
+    home() # Manda a la pantalla de 'Home'
+
 #Variables importantes
+products = []
 name_data = TK.StringVar()
 price_data = TK.StringVar()
 
@@ -118,7 +137,7 @@ add_description_label = TK.Label(add_frame, text="Descripción:")
 add_description_entry = TK.Text(add_frame)
 add_separator = TK.Label()
 # Boton del Formulario
-boton=TK.Button(add_frame, text="Guardar")
+boton=TK.Button(add_frame, text="Guardar", command=add_product)
 
 
 
