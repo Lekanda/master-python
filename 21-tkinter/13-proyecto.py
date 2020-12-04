@@ -32,6 +32,17 @@ def home():
         pady=20
     )
     home_label.grid(row=0, column=0)
+
+    products_box.grid(row=1)# Caja de productos en DB
+    # Listar productos
+    for product in products:
+        if len(product)==3:
+            product.append("added")
+            TK.Label(products_box, text=product[0]).grid()
+            TK.Label(products_box, text=product[1]).grid()
+            TK.Label(products_box, text=product[2]).grid()
+            TK.Label(products_box, text="----------------").grid()
+
     # Ocultar otras Pantallas
     add_label.grid_remove()
     add_frame.grid_remove()
@@ -78,6 +89,7 @@ def add():
     )
     # Ocultar otras Pantallas
     home_label.grid_remove()
+    products_box.grid_remove()
     info_label.grid_remove()
     data_label.grid_remove()
     return True
@@ -96,9 +108,10 @@ def info():
     info_label.grid(row=0, column=0)
     data_label.grid(row=1,column=0)
     # Ocultar otras Pantallas
+    add_label.grid_remove()
+    products_box.grid_remove()
     add_frame.grid_remove()
     home_label.grid_remove()
-    add_label.grid_remove()
     return True
 
 
@@ -123,7 +136,7 @@ price_data = TK.StringVar()
 
 # Definir encabezado de Pantallas(INICIO/HOME)
 home_label=TK.Label(ventana, text="Inicio")
-
+products_box = TK.Frame(ventana, width=250, )
 
 # Definir encabezado de Pantallas(ADD)
 add_label=TK.Label(ventana, text="Añadir producto")
