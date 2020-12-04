@@ -7,7 +7,7 @@
     - Ventana no redimensionable (X)
     - Un Menu superior (Inicio,Añadir, Informacion, Salir) (X)
     - Diferentes pantallas (X)
-    - Formulario de añadir productos
+    - Formulario de añadir productos (X)
     - guardar datos temporalmente
     - MOstrar datos listados en la pantalla 'home'   
     - Opcion de 'Salir' (X)       
@@ -32,6 +32,7 @@ def home():
     home_label.grid(row=0, column=0)
     # Ocultar otras Pantallas
     add_label.grid_remove()
+    add_frame.grid_remove()
     info_label.grid_remove()
     data_label.grid_remove()
     return True
@@ -49,6 +50,7 @@ def add():
     )
     add_label.grid(row=0, column=0,columnspan=12)
     # Campos del formulario
+    add_frame.grid(row=1)
     add_name_label.grid(row=1,column=0,padx=5,pady=5,sticky='E')
     add_name_entry.grid(row=1,column=1,padx=5,pady=5,sticky='W')
     add_price_label.grid(row=2,column=0,padx=5,pady=5,sticky='E')
@@ -90,6 +92,7 @@ def info():
     info_label.grid(row=0, column=0)
     data_label.grid(row=1,column=0)
     # Ocultar otras Pantallas
+    add_frame.grid_remove()
     home_label.grid_remove()
     add_label.grid_remove()
     return True
@@ -106,15 +109,16 @@ home_label=TK.Label(ventana, text="Inicio")
 # Definir encabezado de Pantallas(ADD)
 add_label=TK.Label(ventana, text="Añadir producto")
 #Campos del formulario
-add_name_label = TK.Label(ventana, text="Nombre del Producto: ")
-add_name_entry = TK.Entry(ventana, textvariable=name_data)
-add_price_label = TK.Label(ventana, text="Precio del Producto: ")
-add_price_entry = TK.Entry(ventana, textvariable=price_data)
-add_description_label = TK.Label(ventana, text="Descripción:")
-add_description_entry = TK.Text(ventana)
+add_frame= TK.Frame(ventana)
+add_name_label = TK.Label(add_frame, text="Nombre del Producto: ")
+add_name_entry = TK.Entry(add_frame, textvariable=name_data)
+add_price_label = TK.Label(add_frame, text="Precio del Producto: ")
+add_price_entry = TK.Entry(add_frame, textvariable=price_data)
+add_description_label = TK.Label(add_frame, text="Descripción:")
+add_description_entry = TK.Text(add_frame)
 add_separator = TK.Label()
 # Boton del Formulario
-boton=TK.Button(ventana, text="Guardar")
+boton=TK.Button(add_frame, text="Guardar")
 
 
 
