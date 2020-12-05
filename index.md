@@ -1,5 +1,8 @@
 ## Master-Python´s GitHub Pages
-![Python](imagenes/python.ico)   
+![Python](imagenes/python.ico)
+
+
+
 ---
 
 
@@ -19,6 +22,12 @@
 * [POO](poo.md)
 * [Bases de Datos](db.md)
 * [TKinter](tkinter.md)
+
+
+
+---
+
+
    
 ##### Bibliografia, Cursos y Recursos   
 - Curso de desarrollo web con Python en [web](https://www.udemy.com/course/master-en-python-aprender-python-django-flask-y-tkinter/) de Udemy .
