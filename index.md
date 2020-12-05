@@ -3,8 +3,8 @@
 
 
 ---
-|   Comandos	|   Comandos	|
-|:-:	|:-:	|
+|   MENU	|   Comandos de Python	|
+|-	|-	|
 |   [Variables y tipos](variables.md)	|   [Modulos](modulos.md)	|
 |   [Operadores](operadores.md)	|   [Paquetes](paquetes.md)	|
 
