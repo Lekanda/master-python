@@ -1,12 +1,8 @@
 ## Master-Python´s GitHub Pages
 ![Python](imagenes/python.ico)   
+---
 
 
-
-|   MENU	|   Comandos de Python	|
-|-	|-	|
-|   [Variables y tipos](variables.md)	|   [Modulos](modulos.md)	|
-|   [Operadores](operadores.md)	|   [Paquetes](paquetes.md)	|
 
 ### Menu    
 * [Variables y tipos](variables_tipo.md)
