@@ -1,0 +1,14 @@
+********************************************************
+**********************Capitulo 96***********************
+********************************************************
+- Para instalar los demas servicios, la mejor opcion es instalar WAMP, que tiene:
+            - PHP
+            - MySQL
+            - MariaDB
+            - Apache
+
+- Para instalar el "mysql-connector-python 8.0.22". En consola ejecutar:
+            pip install mysql-connector-python
+
+- Decargar o coger link en :
+            https://pypi.org/project/mysql-connector-python/

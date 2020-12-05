@@ -1,5 +1,5 @@
 ## Welcome to Master-Python´s GitHub Pages
-![Lauburu](https://www.dropbox.com/s/lxkr0aonyf2dlhu/estrella-luburu.png?dl=0)
+![Python](imagenes/python.ico)
 
 Este curso es [Python desde 0](https://www.udemy.com/course/master-en-python-aprender-python-django-flask-y-tkinter/) , curso de iniciacion a Python.
 
