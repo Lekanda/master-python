@@ -9,14 +9,15 @@
     - Diferentes pantallas (X)
     - Formulario de añadir productos (X)
     - guardar datos temporalmente (X)
-    - MOstrar datos listados en la pantalla 'home'   
+    - MOstrar datos listados en la pantalla 'home' (X)
     - Opcion de 'Salir' (X)       
 """
 import tkinter as TK
+from tkinter import ttk
 # definir ventana
 ventana=TK.Tk()
 # ventana.geometry("500x500")
-ventana.minsize("500x500") #Tamaño minimo de la ventana
+ventana.minsize(500,500) #Tamaño minimo de la ventana
 ventana.title("Proyecto con TKINTER")
 ventana.resizable(0,0)
 
@@ -34,8 +35,9 @@ def home():
     )
     home_label.grid(row=0, column=0)
 
-    products_box.grid(row=1)# Caja de productos en DB
+    products_box.grid(row=2)# Caja de productos en DB
     # Listar productos
+    """
     for product in products:
         if len(product)==3:
             product.append("added")
@@ -43,6 +45,13 @@ def home():
             TK.Label(products_box, text=product[1]).grid()
             TK.Label(products_box, text=product[2]).grid()
             TK.Label(products_box, text="----------------").grid()
+    """
+    for product in products:
+        if len(product)==3:
+            product.append("added")
+            products_box.insert('', 0 ,text=product[0], values=(product[1]))
+
+
 
     # Ocultar otras Pantallas
     add_label.grid_remove()
@@ -137,7 +146,14 @@ price_data = TK.StringVar()
 
 # Definir encabezado de Pantallas(INICIO/HOME)
 home_label=TK.Label(ventana, text="Inicio")
-products_box = TK.Frame(ventana, width=250, )
+# products_box = TK.Frame(ventana, width=250)
+TK.Label(ventana).grid(row=1)
+
+# TK.Label(products_box).grid(row=0)
+products_box=ttk.Treeview(height=12,columns=2)
+products_box.grid(row=1, column=0,columnspan=2)
+products_box.heading("#0", text='Producto',anchor=TK.W)
+products_box.heading("#1", text='Precio',anchor=TK.W)
 
 # Definir encabezado de Pantallas(ADD)
 add_label=TK.Label(ventana, text="Añadir producto")
