@@ -3,8 +3,10 @@
 
 
 ---
-|  * [Variables y tipos](variables.md) 	|   	|
+|   Comandos	|   Comandos	|
 |:-:	|:-:	|
+|   [Variables y tipos](variables.md)	|   [Modulos](modulos.md)	|
+|   [Operadores](operadores.md)	|   [Paquetes](paquetes.md)	|
 
 ### Menu    
 * [Variables y tipos](variables.md)
