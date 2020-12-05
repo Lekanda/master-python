@@ -2,9 +2,7 @@
 ![Python](imagenes/python.ico)
 
 
-
 ---
-
 
 
 ### Menu    
@@ -24,11 +22,11 @@
 * [TKinter](tkinter.md)
 
 
-
 ---
 
 
-   
 ##### Bibliografia, Cursos y Recursos   
 - Curso de desarrollo web con Python en [web](https://www.udemy.com/course/master-en-python-aprender-python-django-flask-y-tkinter/) de Udemy .
+
+
 ---   
