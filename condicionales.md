@@ -112,7 +112,7 @@ else:
 
 
 
-# print("############EJEMPLO6#################")
+print("############EJEMPLO6#################")
 edad_minima= 18
 edad_maxima= 65
 edad_real=int(input("Cual es tu Edad??: "))
