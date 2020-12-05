@@ -3,6 +3,10 @@
 
 #### Menu
 * [Operadores](operadores.md)
+* [Condicionales](condicionales.md)
+* [Funciones](funciones.md)
+* [Diccionarios](diccionarios.md)
+* [Paquetes](paquetes.md)
 
 
 
