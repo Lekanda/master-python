@@ -2,14 +2,14 @@
 ![Python](imagenes/python.ico)   
 
 
----
+
 |   MENU	|   Comandos de Python	|
 |-	|-	|
 |   [Variables y tipos](variables.md)	|   [Modulos](modulos.md)	|
 |   [Operadores](operadores.md)	|   [Paquetes](paquetes.md)	|
 
 ### Menu    
-* [Variables y tipos](variables.md)
+* [Variables y tipos](variables_tipo.md)
 * [Operadores](operadores.md)
 * [Condicionales](condicionales.md)
 * [Bucles](bucles.md)
@@ -25,5 +25,5 @@
 * [TKinter](tkinter.md)
    
 ##### Bibliografia, Cursos y Recursos   
-* Curso de desarrollo web con Python en [web](https://www.udemy.com/course/master-en-python-aprender-python-django-flask-y-tkinter/) de Udemy .
+- Curso de desarrollo web con Python en [web](https://www.udemy.com/course/master-en-python-aprender-python-django-flask-y-tkinter/) de Udemy .
 ---   
