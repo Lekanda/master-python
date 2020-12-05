@@ -1,4 +1,4 @@
-## Master-Python´s GitHub Pages
+# Master-Python´s GitHub Pages
 ![Python](imagenes/python.ico)
 
 
@@ -8,6 +8,7 @@
 ### Menu    
 * [Variables y tipos](variables_tipo.md)
 * [Operadores](operadores.md)
+* [Entrada/Salida](entrada-salida.md)
 * [Condicionales](condicionales.md)
 * [Bucles](bucles.md)
 * [Funciones](funciones.md)
