@@ -14,5 +14,5 @@
 
 ---
 #### Bibliografia, Cursos y Recursos
-* Curso  [Python](https://www.udemy.com/course/master-en-python-aprender-python-django-flask-y-tkinter/) de Udemy .
+* Curso de desarrollo web con Python en [curso](https://www.udemy.com/course/master-en-python-aprender-python-django-flask-y-tkinter/) de Udemy .
 
