@@ -5,7 +5,9 @@
 
 
 > Los operadores son **+ - * /**
-> Se utiliza **and**, **or**, **>=**, **<=**, **==**
+
+>> Se utiliza **and**, **or**, **>=**, **<=**, **==**
+
 
 ```python
 # Ejemplo 1********************
