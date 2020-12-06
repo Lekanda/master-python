@@ -25,6 +25,8 @@
 * [POO](poo.md)
 * [Bases de Datos](db.md)
 * [TKinter](tkinter.md)
+* [Django](django.md)
+
 
 
 ---
