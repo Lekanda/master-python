@@ -1,4 +1,4 @@
-#           DJANGO. Framework de Python
+# ![Django](imagenes/django.ico)DJANGO. Framework de Python
 
 ---
 
@@ -91,13 +91,15 @@
             path('inicio/', views.index, name="inicio"),
 ```    
 
-> **Para importar dede una APP es mejor el metodo**
+> **Para importar dede una APP es mejor el metodo**     
+
 ```python
-        import miapp.views
-        # Cuando hay muchas Apps y metodos es mejor asi, mas visual
+            import miapp.views
+            # Cuando hay muchas Apps y metodos es mejor asi, mas visual
 ```    
 - Otra forma de usar una funcion en **views**
-- Se Puede hacer cualquier operacion 
+- Se Puede hacer cualquier operacion       
+
 ```python
         def index(request):
             html= """
@@ -190,7 +192,7 @@
 
     return HttpResponse(layout+f"""
             <h1>Contacto </h1>
-    """+html)
+    """ + html)
 ```
 
 

@@ -5,9 +5,6 @@
 ---
 
 
-|  [Variables y tipos](variables_tipo.md)	|  [Operadores](operadores.md)	|
-|-	|-	|
-
 
 ### Menu    
 * [Variables y tipos](variables_tipo.md)
@@ -26,7 +23,6 @@
 * [Bases de Datos](db.md)
 * [TKinter](tkinter.md)
 * [Django](django.md)
-
 
 
 ---
