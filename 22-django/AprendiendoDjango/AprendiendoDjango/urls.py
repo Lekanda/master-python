@@ -16,10 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 #importar app con mis vistas
-from miapp import views
+# from miapp import views
+import miapp.views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hola-mundo/', views.hola_mundo, name="hola_mundo")
+    path('', miapp.views.index, name="index"),
+    path('inicio/', miapp.views.index, name="inicio"),
+    path('pagina/', miapp.views.pagina, name="pagina"),
+    path('hola-mundo/', miapp.views.hola_mundo, name="hola_mundo")
 ]
