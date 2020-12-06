@@ -57,7 +57,17 @@ def pagina(request):
             <h1>Pagina desde pagina de pruebas</h1>
     """)
 
-def contacto(request,nombre):
+def contacto(request,nombre="",apellidos=""):
+    html=""
+    if nombre and apellidos:
+        html+= "<p>El nombre completo es :</p>"
+        html+=f"<h3>{nombre} {apellidos}</h3>"
+    elif nombre:
+        html+= "<p>El nombre es :</p>"
+        html+=f"<h3>{nombre}</h3>"
+    elif  nombre!=True and apellidos!=True:
+        html+= "<p>No hay datos :</p>"
+
     return HttpResponse(layout+f"""
-            <h1>Contacto {nombre}</h1>
-    """)
+            <h1>Contacto </h1>
+    """+html)
