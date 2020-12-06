@@ -5,9 +5,6 @@
 ---
 
 
-|  * [Variables y tipos](variables_tipo.md)	|  * [Operadores](operadores.md)	|
-|-	|-	|
-
 
 ### Menu    
 * [Variables y tipos](variables_tipo.md)

@@ -1,4 +1,4 @@
-#           DJANGO. Framework de Python
+# ![Django](imagenes/django.py)DJANGO. Framework de Python
 
 ---
 
@@ -94,8 +94,8 @@
 > **Para importar dede una APP es mejor el metodo**     
 
 ```python
-        import miapp.views
-        # Cuando hay muchas Apps y metodos es mejor asi, mas visual
+            import miapp.views
+            # Cuando hay muchas Apps y metodos es mejor asi, mas visual
 ```    
 - Otra forma de usar una funcion en **views**
 - Se Puede hacer cualquier operacion       
