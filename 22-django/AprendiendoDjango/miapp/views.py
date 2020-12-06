@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 
 
 # Create your views here.
@@ -52,7 +52,12 @@ def hola_mundo(request):
             <input type="text"/>
     """)
 
-def pagina(request):
+def pagina(request,redirigir=0):
+    if redirigir==1:
+        return redirect('/contacto/Andres/Bernaola')
+        # se puede poner una URL como google tmb
+
+
     return HttpResponse(layout+"""
             <h1>Pagina desde pagina de pruebas</h1>
     """)

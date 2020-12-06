@@ -32,5 +32,8 @@ urlpatterns = [
 
 
     path('pagina-pruebas/', miapp.views.pagina, name="pagina"),
+    path('pagina-pruebas/<int:redirigir>', miapp.views.pagina, name="pagina"),
+
+
     path('hola-mundo/', miapp.views.hola_mundo, name="hola_mundo")
 ]
