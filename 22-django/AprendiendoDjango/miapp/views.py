@@ -19,6 +19,9 @@ layout= """
         <li>
             <a href="/pagina-pruebas">Pagina</a>
         </li>
+        <li>
+            <a href="/contacto">Contacto</a>
+        </li>
     </ul>
     <hr/>
 """
@@ -49,7 +52,12 @@ def hola_mundo(request):
             <input type="text"/>
     """)
 
-def pagina_pruebas(request):
+def pagina(request):
     return HttpResponse(layout+"""
             <h1>Pagina desde pagina de pruebas</h1>
+    """)
+
+def contacto(request,nombre):
+    return HttpResponse(layout+f"""
+            <h1>Contacto {nombre}</h1>
     """)
