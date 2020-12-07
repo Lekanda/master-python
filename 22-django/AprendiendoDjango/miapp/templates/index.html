@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-    Home
+    {{title}}
 {% endblock %}
 
 {% block content %}
@@ -10,6 +10,8 @@
     {% endcomment %}
     {% load static %}
     {{block.super}}
-    <h1>Esta es la Home Page</h1>
+    <h1>{{title}}</h1>
+    {{mi_variable}}
+    <br/>
     <img src="{% static 'images/django.ico' %}"/>
 {% endblock %}

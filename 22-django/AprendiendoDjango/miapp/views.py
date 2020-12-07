@@ -29,18 +29,21 @@ layout= """
 
 
 def index(request):
-    # html= """
-    # """
+    html= """
+    """
         
-    # year=2020
-    # while year<=2050:
-    #     if year%2==0:
-    #         html+=f"<li>{str(year)}</li>"
-    #     year+=1
+    year=2020
+    while year<=2050:
+        if year%2==0:
+            html+=f"<li>{str(year)}</li>"
+        year+=1
 
-    # html+="</ul>"
+    html+="</ul>"
 
-    return render(request,'index.html')
+    return render(request,'index.html', {
+        'title':'Home Page',
+        'mi_variable':'Soy un dato que se pasa a la vista'
+    })
 
 
 
