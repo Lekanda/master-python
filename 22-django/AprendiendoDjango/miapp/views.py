@@ -41,11 +41,13 @@ def index(request):
     html+="</ul>"
 
     nombre='Andres'
+    lenguajes=['JavaScript','Python','HTML','C','Java','C#']
 
     return render(request,'index.html', {
         'title':'Home Page',
         'mi_variable':'Soy un dato que se pasa a la vista',
-        'nombre':nombre
+        'nombre':nombre,
+        'lenguajes':lenguajes
     })
 
 

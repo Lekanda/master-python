@@ -5,9 +5,13 @@
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none; /* Quita los puntos de los enlaces*/
 }
-p{
+p, h2, h3,ul{
     margin-top: 5px;
     margin-bottom: 5px;
+}
+ul,ol{
+    margin-left: 20px;
+    margin-bottom: 10px;
 }
 body{
     background-color: rgb(245, 245, 166);

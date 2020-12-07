@@ -17,11 +17,13 @@
         <p>Mi nombre es : {{nombre}}</p>
     {% else %}
         <p>Mi nombre no existe cobarde</p>
-
-    
     {% endif %}
 
-
+    <ul>
+        {% for lenguaje in lenguajes %}
+            <li>{{lenguaje}}</li>
+        {% endfor %}
+    </ul>
 
     <br/>
     <img src="{% static 'images/django.ico' %}"/>
