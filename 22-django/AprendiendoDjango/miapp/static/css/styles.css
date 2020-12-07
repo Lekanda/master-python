@@ -13,12 +13,27 @@ header{
     width: 1212px;
     height: 140px;
     background-color: rgb(213, 240, 117);
-    margin: 0px auto;
+    margin: 0 auto;
+}
+#logotipo{
+    width: 32%;
+    height: 140px;
+    margin: 0 auto;
+    padding-top: -1px;
+}
+#logotipo img{
+    display: block;/*Deja manipular como quiera*/
+    width: 60px;
+    float: left;/*Para colocarlo a la izquierda*/
+    margin-top: 31px;
 }
 #logotipo h1{
-    display: block;
+    display: block;/*Deja manipular como quiera*/
+    float: left;
+    margin-top: 45px;
+    margin-left: 20px;
     letter-spacing: 2;
-    text-transform: uppercase;
-    font-weight: normal;
+    font-weight: lighter;
     color: #0b4e05;
+
 }
