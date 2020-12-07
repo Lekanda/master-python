@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,34 +10,44 @@
         {% endblock %} 
         | Django
     </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
 </head>
 
 <body>
-    <h1>Sitio Web con Django</h1>
-    <hr />
-    <ul>
-        <li>
-            <a href="/inicio">Inicio</a>
-        </li>
-        <li>
-            <a href="/hola-mundo">Hola Mundo</a>
-        </li>
-        <li>
-            <a href="/pagina-pruebas">Pagina</a>
-        </li>
-        <li>
-            <a href="/contacto">Contacto</a>
-        </li>
-    </ul>
-    <hr/>
+    <!-- Cabezera de la Pagina -->
+    <header>
+        <div id="logotipo">
+            <!--Logo de Django-->
+            <h1>Sitio Web con Django</h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="/inicio">Inicio</a>
+            </li>
+            <li>
+                <a href="/hola-mundo">Hola Mundo</a>
+            </li>
+            <li>
+                <a href="/pagina-pruebas">Pagina</a>
+            </li>
+            <li>
+                <a href="/contacto">Contacto</a>
+            </li>
+        </ul>
+    </nav>
+
+    
 
     <div id="content">
+        <h2 class="title">Titulo de Prueba</h2>
         {% block content %}
-            
+            <strong>Contenido del Bloque original</strong>
         {% endblock %}
     </div>
 
-    <hr/>
     <footer>
         Master en Python con Django &copy; Andres Bernaola
     </footer>    
