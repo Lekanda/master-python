@@ -5,6 +5,10 @@
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none; /* Quita los puntos de los enlaces*/
 }
+p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 body{
     background-color: rgb(245, 245, 166);
 }

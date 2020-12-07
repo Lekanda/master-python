@@ -11,7 +11,18 @@
     {% load static %}
     {{block.super}}
     <h1>{{title}}</h1>
-    {{mi_variable}}
+    <p>{{mi_variable}}</p>
+
+    {% if nombre and nombre == 'Andres'%}
+        <p>Mi nombre es : {{nombre}}</p>
+    {% else %}
+        <p>Mi nombre no existe cobarde</p>
+
+    
+    {% endif %}
+
+
+
     <br/>
     <img src="{% static 'images/django.ico' %}"/>
 {% endblock %}

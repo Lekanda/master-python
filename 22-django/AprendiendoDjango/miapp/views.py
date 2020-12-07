@@ -40,9 +40,12 @@ def index(request):
 
     html+="</ul>"
 
+    nombre='Andres'
+
     return render(request,'index.html', {
         'title':'Home Page',
-        'mi_variable':'Soy un dato que se pasa a la vista'
+        'mi_variable':'Soy un dato que se pasa a la vista',
+        'nombre':nombre
     })
 
 
