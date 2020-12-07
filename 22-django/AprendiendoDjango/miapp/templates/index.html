@@ -5,6 +5,9 @@
 {% endblock %}
 
 {% block content %}
+    {% comment 'Comentario sobre el codigo' %}
+        <p>Esto tambien esta comentado</p>
+    {% endcomment %}
     {% load static %}
     {{block.super}}
     <h1>Esta es la Home Page</h1>
