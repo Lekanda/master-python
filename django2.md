@@ -76,7 +76,7 @@
 3. Crear _bloque_ de _contenido_ (**content**) dentro de un div
 4. 
 
-```html
+```python
             <!DOCTYPE html>
             <html lang="es">
 
@@ -125,7 +125,7 @@
 
 - En cada template excepto el layout hay que configurarlas para que **hereden**  el _layout.html_.  
 -Por ejemplo en template _pagina_, quedaria asi:
-```html
+```py
         {% extends 'layout.html' %}
 
         {% block title %}
