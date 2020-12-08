@@ -1,4 +1,4 @@
-# Master-Python´s GitHub Pages
+# Master-Python Lekanda GitHub Pages
 ![Python](imagenes/python.ico)
 
 
