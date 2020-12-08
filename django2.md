@@ -74,7 +74,6 @@
 1. Crear funciones comunes en **layout.html** . En este caso  un _encabezado_, un _menu_  y un _footer_.
 2. Crear un _bloque_  para el _titulo_.(_En esta caso se añade algo de txt despues_)
 3. Crear _bloque_ de _contenido_ (**content**) dentro de un div
-4. 
 
 ```html
             <!DOCTYPE html>
@@ -84,9 +83,6 @@
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <page.title>
-                    {% block title %} 
-                    {% endblock %} 
-                    | Django
                 </page.title>
             </head>
 
