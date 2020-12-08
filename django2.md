@@ -75,7 +75,7 @@
 2. Crear un _bloque_  para el _titulo_.(_En esta caso se añade algo de txt despues_)
 3. Crear _bloque_ de _contenido_ (**content**) dentro de un div
 
-```html
+```console
             <!DOCTYPE html>
             <html lang="es">
 
