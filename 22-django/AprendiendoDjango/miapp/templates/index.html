@@ -21,7 +21,17 @@
 
     <ul>
         {% for lenguaje in lenguajes %}
-            <li>{{lenguaje}}</li>
+            <li>
+                {{lenguaje}} 
+                {{forloop.first}} 
+                {{forloop.last}}
+                {{forloop.counter}}
+                {{forloop.counter0}}
+                {{forloop.revcounter}}
+                {{forloop.revcounter0}}
+            </li>
+        {% empty %}
+            <p>No hay lenguajes</p>
         {% endfor %}
     </ul>
 

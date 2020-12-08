@@ -42,6 +42,7 @@ def index(request):
 
     nombre='Andres'
     lenguajes=['JavaScript','Python','HTML','C','Java','C#']
+    # lenguajes=[]
 
     return render(request,'index.html', {
         'title':'Home Page',
