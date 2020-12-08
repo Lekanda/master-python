@@ -7,5 +7,30 @@
 {% block content %}
     {{block.super}}
     <h1 class="title" >Pagina desde pagina de pruebas</h1>
-    <p>Hecho por Andres Bernaola</p>
+    <p>{{"Hecho por Andrés BernaolaOli"|cut:" "}}</p>
+
+    {{texto|default:"No hay nada"}}
+    <br/>
+    <hr/>
+    <p>{{lista|first}}</p>
+    <br/>
+    <p>{{lista|join:', '}}</p>
+    <br/>
+    <p>{{lista|length}}</p>
+    <br/>
+    <p>{{texto|upper}}</p>
+    <br/>
+    <p>{{lista|length}}</p>
+    <p>{{"texto prueba"|length}}</p>
+    <br/>
+    <p>{{lista|random}}</p>
+    <br/>
+    <p>
+        {{"<h1>Hola</h1> <strong>Amigo mio</strong>"|striptags}}
+    </p>
+    <br/>
+    <p>
+        {{"<h1>Hola</h1> <strong>Amigo mio</strong>"|striptags|wordcount}}
+    </p>
+
 {% endblock %}

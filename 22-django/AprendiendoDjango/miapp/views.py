@@ -58,7 +58,10 @@ def pagina(request,redirigir=0):
     #     return redirect('/contacto/Andres/Bernaola')
         # se puede poner una URL como google tmb
 
-    return render(request,'pagina.html')
+    return render(request,'pagina.html', {
+        'texto':'Texto desde views',
+        'lista':['uno','dos','tres','cuatro','cinco']
+    })
 
 
 
