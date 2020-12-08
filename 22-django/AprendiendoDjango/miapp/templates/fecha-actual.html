@@ -1,0 +1,11 @@
+<h1>Bienvenido {{nombre}}</h1>
+<h1>2021</h1>
+ <p> Años hasta el 2050:{{saludo}}</p>
+<ul>
+    {{2021|divisibleby:2}}
+    {% for year in years %}
+        {% if year|divisibleby:2 == True %}
+            <li>{{year}}</li>
+        {% endif %}
+    {% endfor %}
+</ul>

@@ -18,7 +18,7 @@
     {% else %}
         <p>Mi nombre no existe cobarde</p>
     {% endif %}
-
+    <hr/>
     <ul>
         {% for lenguaje in lenguajes %}
             <li>
@@ -34,17 +34,7 @@
             <p>No hay lenguajes</p>
         {% endfor %}
     </ul>
-
-    <p> Años hasta el 2050:</p>
-    <ul>
-        {{2021|divisibleby:2}}
-        {% for year in years %}
-
-            {% if year|divisibleby:2 == True %}
-                <li>{{year}}</li>
-            {% endif %}
-        {% endfor %}
-    </ul>
+    {% include 'fecha-actual.html' with saludo="Hola Mundo desde plantilla" %}
 
     <br/>
     <img src="{% static 'images/django.ico' %}"/>
