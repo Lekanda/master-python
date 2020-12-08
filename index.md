@@ -8,7 +8,7 @@
 |               -----------                   |                   ------                |                   -------                      |
 |  * [Variables y tipos](variables_tipo.md)   |                                         |                                                |
 |  * [Operadores](operadores.md)              |                                         |                                                |
-|   * [Entrada/Salida](entrada-salida.md)     |                                         |                                                |
+|  * [Entrada/Salida](entrada-salida.md)      |                                         |                                                |
 
 
 
