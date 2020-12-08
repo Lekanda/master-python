@@ -516,4 +516,138 @@
 
 ##### Funcionalidades extra del bucle FOR
 
-- 
+```html
+<ul>
+    {% for lenguaje in lenguajes %}
+        <li>
+            {{lenguaje}} 
+            {{forloop.first}} => Da true en el primer elemento
+            {{forloop.last}} => Da true en el ultimo elemento
+            {{forloop.counter}} => Cuenta de elementos desde 1
+            {{forloop.counter0}} => Cuenta de elementos desde 0
+            {{forloop.revcounter}} => Cuenta de elementos desde 1 al reves
+            {{forloop.revcounter0}} => Cuenta de elementos desde 0 al reves
+        </li>
+    {% empty %}
+        <p>No hay lenguajes</p>
+    {% endfor %}
+</ul>
+```   
+
+##### El for montado en un archivo HTML
+
+```html
+<p> Años hasta el 2050:</p>
+<ul>
+    {{2021|divisibleby:2}}
+    {% for year in years %}
+        {% if year|divisibleby:2 == True %}
+            <li>{{year}}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+```  
+
+##### INCLUDES templates Django (Template en otra Template)  
+
+- Se puede pasar una template en cualquier otra template
+    - fecha-actual : Es otra *template*
+    - Con *include* accedemos a la template *que esta en la misma carpeta*
+```html
+    {% include 'fecha-actual.html' %}
+```  
+> Los valores de la template de la template se heredan, es decir, los valores que tiene la template padre los tiene la hija tambien. -Cap:208   
+
+- SE puede pasar valores a la template hija, que solo valen en esta. Pasamos valor *saludo* a la template hija desde la padre:   
+```html
+ {% include 'fecha-actual.html' with saludo="Hola Mundo desde plantilla" %}
+```  
+- Luego se pone en la template hija   
+- Si añadimos **only** solo se pasan las hechas con *with*  
+```html
+ {% include 'fecha-actual.html' with saludo="Hola Mundo desde plantilla" only%}
+```  
+
+##### URLs en Templates  
+
+- Cambiamos la configuracion del enlace en el menu de la barra de navegacion:  
+```html
+<li>
+    <a href="{% url 'inicio' %}">Inicio</a>
+</li>
+```  
+- ¿Que ganamos?:
+    - Es mas practico y mejor para configurar
+    - Enlaza con la etiqueta **name** en *urls.py*, no con la ruta
+    - Si cambiamos la ruta del navegador en *urls.py* , se actualiza solo.  
+
+
+##### Fechas en Templates  
+
+- Tambien vale: h:m:s
+```html
+    {% now "d/m/Y" %}
+```   
+- Se pone donde se quiera en un htnml    
+
+
+
+### Filtros en Templates  
+
+##### Filtros por Defecto
+
+- Pagina de documentacion:[https://docs.djangoproject.com/en/3.1/ref/templates/builtins/#built-in-filter-reference](https://docs.djangoproject.com/en/3.1/ref/templates/builtins/#built-in-filter-reference)  
+- Son *acciones predefinidas*, que nos permiten hacer acciones.  
+- En este caso *nos quita los espacios* en una cadena de txt.
+```html
+    <p>{{"Hecho por Andres BernaolaOli"|cut:" "}}</p>
+```   
+
+- Sí pasamos una variable vacia, filtro para que haya un valor por defecto   
+```html
+        {{texto|default:"No hay nada"}}
+```  
+- Filtro para coger *primer* valor   
+```html
+        {{lista|first}}
+```  
+- Filtro para coger *ultimo* valor   
+```html
+        {{lista|last}}
+```   
+- Filtro para presentar *formateado*.
+```html
+        {{lista|join:', '}}
+```   
+- Filtro *devuelve tamaño* de lista.
+```html
+        {{lista|length}}
+        {{"texto prueba"|length}}
+```   
+- Filtro convierte a *mayusculas*.
+```html
+        {{texto|upper}}
+        {{"texto prueba"|upper}}
+```   
+- Filtro convierte a *minusculas*.
+```html
+        {{lista|lower}}
+        {{"texto prueba"|length}}
+```   
+- Filtro devuelve un valor *aleatorio* de una *lista*.
+```html
+        {{lista|random}}
+```   
+- Filtro *limpia las etiquetas de HTML* y presenta en txt normal.
+```html
+        {{<h1>Hola</h1><p>Como estas</p><strong>Amigo mio</strong>|striptags}}
+```   
+- Se pueden *combinar varios filtros* a la vez. En este caso *cuenta el numero de palabras* despues de normalizar el txt con *striptags*
+```html
+        {{<h1>Hola</h1><p>Como estas</p><strong>Amigo mio</strong>|striptags|wordcount}}
+```   
+
+##### Filtros Personalizados
+
+
+
