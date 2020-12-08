@@ -26,16 +26,16 @@
     <nav>
         <ul>
             <li>
-                <a href="/inicio">Inicio</a>
+                <a href="{% url 'inicio' %}">Inicio</a>
             </li>
             <li>
-                <a href="/hola-mundo">Hola Mundo</a>
+                <a href="{% url 'hola_mundo' %}">Hola Mundo</a>
             </li>
             <li>
-                <a href="/pagina-pruebas">Pagina</a>
+                <a href="{% url 'pagina' %}">Pagina</a>
             </li>
             <li>
-                <a href="/contacto">Contacto</a>
+                <a href="{% url 'contacto' 'Andres' 'BernaolaOli' %}">Contacto</a>
             </li>
         </ul>
     </nav>
@@ -56,7 +56,7 @@
     </div>
 
     <footer>
-        Master en Python con Django &copy; Andres Bernaola
+        Master en Python con Django &copy; Andres Bernaola - {% now "d/m/Y" %}
     </footer>    
 </body>
 
