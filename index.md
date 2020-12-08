@@ -4,6 +4,16 @@
 
 ---
 
+|               Fundamentos                   |                   Django                |                   Tkinter                      |
+|               -----------                   |                   ------                |                   -------                      |
+|  * [Variables y tipos](variables_tipo.md)   |                                         |                                                |
+|  * [Operadores](operadores.md)              |                                         |                                                |
+|   * [Entrada/Salida](entrada-salida.md)     |                                         |                                                |
+
+
+
+
+
 
 
 ### Menu    
