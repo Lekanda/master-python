@@ -29,16 +29,10 @@ layout= """
 
 
 def index(request):
-    html= """
-    """
-        
-    year=2020
-    while year<=2050:
-        if year%2==0:
-            html+=f"<li>{str(year)}</li>"
-        year+=1
 
-    html+="</ul>"
+    year=2021
+    hasta=range(year,2051)
+
 
     nombre='Andres'
     lenguajes=['JavaScript','Python','HTML','C','Java','C#']
@@ -48,7 +42,8 @@ def index(request):
         'title':'Home Page',
         'mi_variable':'Soy un dato que se pasa a la vista',
         'nombre':nombre,
-        'lenguajes':lenguajes
+        'lenguajes':lenguajes,
+        'years':hasta
     })
 
 
