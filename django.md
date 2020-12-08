@@ -276,7 +276,7 @@
 3. Crear _bloque_ de _contenido_ (**content**) dentro de un div
 4. 
 
-```html
+```
             <!DOCTYPE html>
             <html lang="es">
 
