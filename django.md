@@ -75,7 +75,7 @@
 -En App principal del proyecto en **urls.py** configurarlo asi:
 ```python
     path('hola-mundo/', views.hola_mundo, name="hola_mundo")
-]
+
 ```
 - `'hola-mundo/'` => la ruta para el nav
 - `views.hola_mundo` => la funcion que hace , esta en **views.py**. Hay que importarla con `from miapp import views`.
@@ -84,7 +84,7 @@
 > **HttpResponse** => nos permite meter datos al DOM mediante HTML
 
 ##### Multiples vistas y urls
-- Para crear la pantalla pral(_index.html_):
+- Para crear la pantalla pral(_index.html_):  
 ```python
             path('', views.index, name="index"),
 ```   
