@@ -76,18 +76,18 @@
 3. Crear _bloque_ de _contenido_ (**content**) dentro de un div
 4. 
 
-```python
+```html
             <!DOCTYPE html>
             <html lang="es">
 
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>
+                <page.title>
                     {% block title %} 
                     {% endblock %} 
                     | Django
-                </title>
+                </page.title>
             </head>
 
             <body>
