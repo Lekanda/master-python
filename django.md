@@ -87,13 +87,13 @@
 - Para crear la pantalla pral(_index.html_)     
 
 ```python
-            path('', views.index, name="index"),
+    path('', views.index, name="index"),
 ```   
 
 - Para crear una vista que sirva para otras se puede hacer con :
 
 ```python
-            path('inicio/', views.index, name="inicio"),
+    path('inicio/', views.index, name="inicio"),
 ```    
 
 > **Para importar dede una APP es mejor el metodo**     
