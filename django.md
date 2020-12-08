@@ -84,12 +84,14 @@
 > **HttpResponse** => nos permite meter datos al DOM mediante HTML
 
 ##### Multiples vistas y urls
-- Para crear la pantalla pral(_index.html_):  
+- Para crear la pantalla pral(_index.html_)     
+
 ```python
             path('', views.index, name="index"),
 ```   
 
 - Para crear una vista que sirva para otras se puede hacer con :
+
 ```python
             path('inicio/', views.index, name="inicio"),
 ```    
@@ -122,7 +124,7 @@
 ```    
 
 ##### Navegacion entre rutas(LAYOUT)
-- Para crear un **layout** creamos y concatenamos a la respuesta de la funcion. P Ejem
+- Para crear un **layout** creamos y concatenamos a la respuesta de la funcion. P Ejem   
 ```python
         # Crear LAYOUT
         layout= """
