@@ -36,5 +36,8 @@ urlpatterns = [
     path('hola-mundo-django/', miapp.views.hola_mundo, name="hola_mundo"),
 
     path('crear-articulo/', miapp.views.crear_articulo, name="crear_articulo"),
-    path('crear-articulo/<str:title>/<str:content>/<str:public>', miapp.views.crear_articulo, name="crear_articulo")
+    path('crear-articulo/<str:title>/<str:content>/<str:public>', miapp.views.crear_articulo, name="crear_articulo"),
+
+    path('articulo/', miapp.views.articulo, name="articulo")
+
 ]

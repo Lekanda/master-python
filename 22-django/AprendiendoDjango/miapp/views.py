@@ -92,3 +92,14 @@ def crear_articulo(request,title,content,public):
     articulo.save()
 
     return HttpResponse(f"Articulo Creado: {articulo.title} - {articulo.content} ")
+
+def articulo(request):
+    try:
+        articulo=Article.objects.get(pk=7,public=False)
+        # Funciona igual con: id, title, content que con pk
+        # public=True => Segundo argumento para la busqueda de un registro
+        response = f"Articulo: {articulo.title}"
+    except:
+        response = "<h1> Articulo no encontrado</h1>"
+
+    return HttpResponse(response)
