@@ -34,6 +34,7 @@ urlpatterns = [
     path('pagina-pruebas/<int:redirigir>', miapp.views.pagina, name="pagina"),
 
     path('hola-mundo-django/', miapp.views.hola_mundo, name="hola_mundo"),
-    
-    path('crear-articulo/', miapp.views.crear_articulo, name="crear_articulo")
+
+    path('crear-articulo/', miapp.views.crear_articulo, name="crear_articulo"),
+    path('crear-articulo/<str:title>/<str:content>/<str:public>', miapp.views.crear_articulo, name="crear_articulo")
 ]
