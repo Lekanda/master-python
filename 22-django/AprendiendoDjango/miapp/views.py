@@ -27,14 +27,10 @@ layout= """
     <hr/>
 """
 
-
 # Index principal
 def index(request):
-
     year=2021
     hasta=range(year,2051)
-
-
     nombre='Andres'
     lenguajes=['JavaScript','Python','HTML','C','Java','C#']
     # lenguajes=[]
@@ -47,7 +43,6 @@ def index(request):
         'years':hasta
     })
 
-
 # Funcion HolaMundo
 def hola_mundo(request):
     return render(request,'hola_mundo.html')
@@ -56,13 +51,12 @@ def pagina(request,redirigir=0):
     # if redirigir==1:
     #     return redirect('/contacto/Andres/Bernaola')
         # se puede poner una URL como google tmb
-
     return render(request,'pagina.html', {
         'texto':'Texto desde views',
         'lista':['uno','dos','tres','cuatro','cinco']
     })
 
-# crear contacto 
+# Crear contacto 
 def contacto(request,nombre="",apellidos=""):
     html=""
     if nombre and apellidos:
@@ -114,9 +108,10 @@ def editar_articulo(request, id):
 
     return HttpResponse(f"Articulo editado: {articulo.title} - {articulo.content} ")
 
-
-# Lista todos los registros de la DB
-"""
+######################################################
+########Lista todos los registros de la DB############
+######################################################
+# Lista todos los que hay
 def articulos(request):
     articulos=Article.objects.all()
     # .all=>Saca  todos los registros de la DB
@@ -124,17 +119,23 @@ def articulos(request):
     return render(request, 'articulos.html', {
         'articulos':articulos
     })
-"""
-# Lista y ordena registros por 'title' y los limita a 3
-def articulos(request):
-    articulos=Article.objects.order_by('title')[:3]
-    # order_by => ordenar por:
-    #   title => por titulo
-    #   id => por id
-    #   -id => por id al reves
-    ##########################
-    # [:3] => Limita a 3 los registros que se cogen.
-    # [3:7] => Limita a  registros del 3 al 7 ,que se cogen.
-    return render(request, 'articulos.html', {
-        'articulos':articulos
-    })
+# Lista y ordena registros por 'title' y los limita a 3 registros
+# def articulos(request):
+#     articulos=Article.objects.order_by('title')[1:3]
+#     # order_by => ordenar por:
+#     #   title => por titulo
+#     #   id => por id
+#     #   -id => por id al reves
+#     ##########################
+#     # [:3] => Limita a 3 los registros que se cogen.
+#     # [3:7] => Limita a  registros del 3 al 7 ,que se han cogido.
+#     return render(request, 'articulos.html', {
+#         'articulos':articulos
+#     })
+######################################################
+
+# Borrar un Registro
+def borrar_articulo(request,id):
+    articulo=Article.objects.get(pk=id)
+    articulo.delete()
+    return redirect('articulos')
