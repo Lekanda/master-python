@@ -103,3 +103,15 @@ def articulo(request):
         response = "<h1> Articulo no encontrado</h1>"
 
     return HttpResponse(response)
+
+def editar_articulo(request, id):
+    articulo=Article.objects.get(pk=id)
+
+    articulo.title = "batman en japon"
+    articulo.content = "Pelicula edl 2017"
+    articulo.public = True
+
+
+    articulo.save()
+
+    return HttpResponse(f"Articulo editado: {articulo.title} - {articulo.content} ")
