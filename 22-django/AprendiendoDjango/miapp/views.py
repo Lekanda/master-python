@@ -58,19 +58,10 @@ def pagina(request,redirigir=0):
 
 # Crear contacto 
 def contacto(request,nombre="",apellidos=""):
-    html=""
-    if nombre and apellidos:
-        html+= "<p>El nombre completo es :</p>"
-        html+=f"<h3>{nombre} {apellidos}</h3>"
-    elif nombre:
-        html+= "<p>El nombre es :</p>"
-        html+=f"<h3>{nombre}</h3>"
-    elif  nombre!=True and apellidos!=True:
-        html+= "<p>No hay datos :</p>"
-
-    return HttpResponse(layout+f"""
-            <h1>Contacto </h1>
-    """+html)
+    return render(request,'contacto.html', {
+        'nombre':nombre,
+        'apellidos':apellidos
+    })
 
 # Crear Articulo mediante URL
 def crear_articulo(request,title,content,public):
