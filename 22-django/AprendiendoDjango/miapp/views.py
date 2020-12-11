@@ -6,7 +6,7 @@ from miapp.models import Article
 # MVC => Modelo, Vista , Controlador
 # MTV => Modelo, Template , Vista
 
-# Crear LAYOUT
+# LAYOUT
 layout= """
     <h1>Sitio Web con Django</h1>
     <hr/>
@@ -28,7 +28,7 @@ layout= """
 """
 
 
-
+# Index principal
 def index(request):
 
     year=2021
@@ -48,11 +48,9 @@ def index(request):
     })
 
 
-
+# Funcion HolaMundo
 def hola_mundo(request):
     return render(request,'hola_mundo.html')
-
-
 
 def pagina(request,redirigir=0):
     # if redirigir==1:
@@ -64,8 +62,7 @@ def pagina(request,redirigir=0):
         'lista':['uno','dos','tres','cuatro','cinco']
     })
 
-
-
+# crear contacto 
 def contacto(request,nombre="",apellidos=""):
     html=""
     if nombre and apellidos:
@@ -81,8 +78,7 @@ def contacto(request,nombre="",apellidos=""):
             <h1>Contacto </h1>
     """+html)
 
-
-
+# Crear Articulo mediante URL
 def crear_articulo(request,title,content,public):
     articulo=Article(
         title = title,
@@ -93,6 +89,7 @@ def crear_articulo(request,title,content,public):
 
     return HttpResponse(f"Articulo Creado: {articulo.title} - {articulo.content} ")
 
+# Buscar articulo por PrimaryKey(7) y sí es public=False
 def articulo(request):
     try:
         articulo=Article.objects.get(pk=7,public=False)
@@ -104,6 +101,7 @@ def articulo(request):
 
     return HttpResponse(response)
 
+# Editar registro
 def editar_articulo(request, id):
     articulo=Article.objects.get(pk=id)
 
@@ -115,3 +113,28 @@ def editar_articulo(request, id):
     articulo.save()
 
     return HttpResponse(f"Articulo editado: {articulo.title} - {articulo.content} ")
+
+
+# Lista todos los registros de la DB
+"""
+def articulos(request):
+    articulos=Article.objects.all()
+    # .all=>Saca  todos los registros de la DB
+    # Tiene menos opciones que get()
+    return render(request, 'articulos.html', {
+        'articulos':articulos
+    })
+"""
+# Lista y ordena registros por 'title' y los limita a 3
+def articulos(request):
+    articulos=Article.objects.order_by('title')[:3]
+    # order_by => ordenar por:
+    #   title => por titulo
+    #   id => por id
+    #   -id => por id al reves
+    ##########################
+    # [:3] => Limita a 3 los registros que se cogen.
+    # [3:7] => Limita a  registros del 3 al 7 ,que se cogen.
+    return render(request, 'articulos.html', {
+        'articulos':articulos
+    })
