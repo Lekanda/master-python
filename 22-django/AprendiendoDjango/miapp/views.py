@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from miapp.models import Article
+from django.db.models import Q
 
 
 # Create your views here.
@@ -157,21 +158,28 @@ def editar_articulo(request, id):
 
 
 # EXCLUDE => Excluye segun la condicion.
+# def articulos(request):
+#     articulos=Article.objects.filter(
+#         title="Articulo"
+#     ).exclude(public=False)
+
+#     articulos=Article.objects.raw("SELECT * FROM miapp_article WHERE title='Articulo' AND public=0")
+
+#     return render(request, 'articulos.html', {
+#         'articulos':articulos
+#     })
+
+
+
+# OR en consulta a ORM.
 def articulos(request):
     articulos=Article.objects.filter(
-        title="Articulo"
-    ).exclude(public=False)
-
-    articulos=Article.objects.raw("SELECT * FROM miapp_article WHERE title='Articulo' AND public=0")
-
-
-    # .all=>Saca  todos los registros de la DB
-    # Tiene menos opciones que get()
+        # Que el title contenga 2 'o' 3 en su txt.
+        Q(title__contains="2") | Q(title__contains="3")
+    )
     return render(request, 'articulos.html', {
         'articulos':articulos
     })
-
-
 ######################################################
 ######################################################
 
