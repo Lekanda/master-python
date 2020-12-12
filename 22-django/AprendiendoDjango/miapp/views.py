@@ -104,13 +104,13 @@ def editar_articulo(request, id):
 ######################################################
 # Lista todos los registros de la tabla.
 
-def articulos(request):
-    articulos=Article.objects.all()
-    # .all=>Saca  todos los registros de la DB
-    # Tiene menos opciones que get()
-    return render(request, 'articulos.html', {
-        'articulos':articulos
-    })
+# def articulos(request):
+#     articulos=Article.objects.all()
+#     # .all=>Saca  todos los registros de la DB
+#     # Tiene menos opciones que get()
+#     return render(request, 'articulos.html', {
+#         'articulos':articulos
+#     })
 
 # Lista y ordena registros por 'title' y los limita a 3 registros
 
@@ -154,7 +154,21 @@ def articulos(request):
 #         'articulos':articulos
 #     })
 
-# ######################################################
+
+
+# EXCLUDE => Excluye segun la condicion.
+def articulos(request):
+    articulos=Article.objects.filter(
+        title="Articulo"
+    ).exclude(public=False)
+    # .all=>Saca  todos los registros de la DB
+    # Tiene menos opciones que get()
+    return render(request, 'articulos.html', {
+        'articulos':articulos
+    })
+
+
+######################################################
 ######################################################
 
 
