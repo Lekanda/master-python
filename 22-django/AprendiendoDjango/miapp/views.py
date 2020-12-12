@@ -80,12 +80,15 @@ def crear_articulo(request,title,content,public):
 
     return HttpResponse(f"Articulo Creado: <strong>{articulo.title} - {articulo.content}</strong> ")
 
+
+
+
 # Crear articulo 
 def save_article(request):
     if request.method == 'GET':
         title = request.GET['title']
         if len(title)<=5 :
-            return HttpResponse("El titulo es muy pequeño")
+            return HttpResponse("<h2>El titulo es muy pequeño</h2>")
 
         content= request.GET['content']
         public= request.GET['public']
@@ -99,19 +102,19 @@ def save_article(request):
         articulo.save()
         return HttpResponse(f"Articulo Creado: <strong>{articulo.title} - {articulo.content}</strong>")
     else:
-        return HttpResponse("<h2>Articulo no se creo el articulo</h2>")
-
-
-    
-
-    
+        return HttpResponse("<h2>No se creo el articulo</h2>")
 
 def create_article(request):
     return render(request,'create_article.html')
 
 
-#######################################################
-#################### FIN ##############################
+
+
+
+
+
+######################################################
+####################FIN##############################
 #######################################################
 
 
