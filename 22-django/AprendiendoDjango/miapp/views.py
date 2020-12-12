@@ -64,7 +64,12 @@ def contacto(request,nombre="",apellidos=""):
         'apellidos':apellidos
     })
 
+
+
+###############################
 # Crear Articulo mediante URL
+###############################
+# Crear articulo mediante la URL
 def crear_articulo(request,title,content,public):
     articulo=Article(
         title = title,
@@ -73,7 +78,29 @@ def crear_articulo(request,title,content,public):
     )
     articulo.save()
 
-    return HttpResponse(f"Articulo Creado: {articulo.title} - {articulo.content} ")
+    return HttpResponse(f"Articulo Creado: <strong>{articulo.title} - {articulo.content}</strong> ")
+
+# Crear articulo 
+def save_article(request):
+    articulo=Article(
+        title = title,
+        content = content,
+        public = public
+    )
+    articulo.save()
+
+    return HttpResponse(f"Articulo Creado: <strong>{articulo.title} - {articulo.content}</strong>")
+
+def create_article(request):
+    return render(request,'create_article.html')
+
+
+#######################################################
+#################### FIN ##############################
+#######################################################
+
+
+
 
 # Buscar articulo por PrimaryKey(7) y sí es public=False
 def articulo(request):
@@ -104,7 +131,6 @@ def editar_articulo(request, id):
 ########Lista todos los registros de la DB############
 ######################################################
 # Lista todos los registros de la tabla.
-
 # def articulos(request):
 #     articulos=Article.objects.all()
 #     # .all=>Saca  todos los registros de la DB
@@ -113,8 +139,9 @@ def editar_articulo(request, id):
 #         'articulos':articulos
 #     })
 
-# Lista y ordena registros por 'title' y los limita a 3 registros
 
+##################################
+# Lista y ordena registros por 'title' y los limita a 3 registros
 # def articulos(request):
 #     articulos=Article.objects.order_by('title')[1:3]
 #     # order_by => ordenar por:
@@ -127,11 +154,11 @@ def editar_articulo(request, id):
 #     return render(request, 'articulos.html', {
 #         'articulos':articulos
 #     })
-# 
 
+
+##################################
 # FILTER => Obtiene un registro por title en este caso
 # Se pueden poner mas condiciones: (title="Caza menor",id=8)
-
 # def articulos(request):
 #     # lookups => da opciones para buscar en los campos.
 #     # (title__contains="articulo") => Sí en title contiene 'articulo'
@@ -143,6 +170,7 @@ def editar_articulo(request, id):
 #     })
 
 
+#######################
 # Buscar por aquellos que tengan un id mayor que 15
 # def articulos(request):
 #     articulos=Article.objects.filter(id__gt=15)
@@ -156,7 +184,7 @@ def editar_articulo(request, id):
 #     })
 
 
-
+######################
 # EXCLUDE => Excluye segun la condicion.
 # def articulos(request):
 #     articulos=Article.objects.filter(
@@ -164,13 +192,12 @@ def editar_articulo(request, id):
 #     ).exclude(public=False)
 
 #     articulos=Article.objects.raw("SELECT * FROM miapp_article WHERE title='Articulo' AND public=0")
-
 #     return render(request, 'articulos.html', {
 #         'articulos':articulos
 #     })
 
 
-
+#################
 # OR en consulta a ORM.
 def articulos(request):
     articulos=Article.objects.filter(
@@ -180,8 +207,9 @@ def articulos(request):
     return render(request, 'articulos.html', {
         'articulos':articulos
     })
-######################################################
-######################################################
+#######################################################
+#################### FIN ##############################
+#######################################################
 
 
 # Borrar un Registro
