@@ -113,15 +113,59 @@ nav ul li a:hover{
     margin-top: 50px;
 }
 .box{
-    width: 1212px;
     background:rgb(245, 245, 166);
     width: 95%;
     min-height: 930px;
     padding: 20px;
     border: 1px solid #9b5f48;
+    border-radius: 2px;
     box-shadow: 0px 0px 20px #45751e;
-    border-radius: 4px;
+    margin: 0 auto;
 }
+.box form {
+    width: 40%;
+}
+.box form input,
+.box form label{
+    display: block;
+    padding: 5px;
+    padding-left: 0px;
+}
+.box form input[type="text"],
+.box form textarea,
+.box form select{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.box form select{
+    width: 100px;
+    padding: 5px;
+}
+.box form textarea{
+    height: 60px;
+}
+
+
+
+.box form input[type='submit'],
+.box form input[type='button'],
+.box form button{
+    padding: 10px;
+    margin-top: 5px;
+    background: #9ed671;
+    border: 1px solid black;
+    color: rgb(43 169 119);
+    transition: 500ms all;
+}
+.box form input[type='submit']:hover,
+.box form input[type='button']:hover,
+.box form button:hover{
+    cursor: pointer;
+    background: #63ce0b;
+    color:#03665e;
+    transition: 500ms all;
+}
+
 .box img{
     width: 80px;
 }
