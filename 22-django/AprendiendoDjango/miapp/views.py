@@ -82,14 +82,29 @@ def crear_articulo(request,title,content,public):
 
 # Crear articulo 
 def save_article(request):
-    articulo=Article(
+    if request.method == 'GET':
+        title = request.GET['title']
+        if len(title)<=5 :
+            return HttpResponse("El titulo es muy pequeño")
+
+        content= request.GET['content']
+        public= request.GET['public']
+
+
+        articulo=Article(
         title = title,
         content = content,
         public = public
-    )
-    articulo.save()
+        )
+        articulo.save()
+        return HttpResponse(f"Articulo Creado: <strong>{articulo.title} - {articulo.content}</strong>")
+    else:
+        return HttpResponse("<h2>Articulo no se creo el articulo</h2>")
 
-    return HttpResponse(f"Articulo Creado: <strong>{articulo.title} - {articulo.content}</strong>")
+
+    
+
+    
 
 def create_article(request):
     return render(request,'create_article.html')
@@ -131,13 +146,13 @@ def editar_articulo(request, id):
 ########Lista todos los registros de la DB############
 ######################################################
 # Lista todos los registros de la tabla.
-# def articulos(request):
-#     articulos=Article.objects.all()
-#     # .all=>Saca  todos los registros de la DB
-#     # Tiene menos opciones que get()
-#     return render(request, 'articulos.html', {
-#         'articulos':articulos
-#     })
+def articulos(request):
+    articulos=Article.objects.all().order_by('-id')
+    # .all=>Saca  todos los registros de la DB
+    # Tiene menos opciones que get()
+    return render(request, 'articulos.html', {
+        'articulos':articulos
+    })
 
 
 ##################################
@@ -199,14 +214,14 @@ def editar_articulo(request, id):
 
 #################
 # OR en consulta a ORM.
-def articulos(request):
-    articulos=Article.objects.filter(
-        # Que el title contenga 2 'o' 3 en su txt.
-        Q(title__contains="2") | Q(title__contains="3")
-    )
-    return render(request, 'articulos.html', {
-        'articulos':articulos
-    })
+# def articulos(request):
+#     articulos=Article.objects.filter(
+#         # Que el title contenga 2 'o' 3 en su txt.
+#         Q(title__contains="2") | Q(title__contains="3")
+#     )
+#     return render(request, 'articulos.html', {
+#         'articulos':articulos
+#     })
 #######################################################
 #################### FIN ##############################
 #######################################################
