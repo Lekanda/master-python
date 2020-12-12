@@ -102,7 +102,8 @@ def editar_articulo(request, id):
 ######################################################
 ########Lista todos los registros de la DB############
 ######################################################
-# Lista todos los que hay
+# Lista todos los registros de la tabla.
+
 def articulos(request):
     articulos=Article.objects.all()
     # .all=>Saca  todos los registros de la DB
@@ -110,7 +111,9 @@ def articulos(request):
     return render(request, 'articulos.html', {
         'articulos':articulos
     })
+
 # Lista y ordena registros por 'title' y los limita a 3 registros
+
 # def articulos(request):
 #     articulos=Article.objects.order_by('title')[1:3]
 #     # order_by => ordenar por:
@@ -123,7 +126,37 @@ def articulos(request):
 #     return render(request, 'articulos.html', {
 #         'articulos':articulos
 #     })
+# 
+
+# FILTER => Obtiene un registro por title en este caso
+# Se pueden poner mas condiciones: (title="Caza menor",id=8)
+
+# def articulos(request):
+#     # lookups => da opciones para buscar en los campos.
+#     # (title__contains="articulo") => Sí en title contiene 'articulo'
+#     # (title__exact="articulo") => Sí en title titulo exacto 'articulo'
+#     # (title__iexact="articulo") => Sí en title titulo exacto 'articulo' sin mirar Mayus o Minus
+#     articulos=Article.objects.filter(title__contains="articulo")
+#     return render(request, 'articulos.html', {
+#         'articulos':articulos
+#     })
+
+
+# Buscar por aquellos que tengan un id mayor que 15
+# def articulos(request):
+#     articulos=Article.objects.filter(id__gt=15)
+#     # filter(id__gt=12) => id 'mas grande que' (great than)
+#     # filter(id__gte=12) => id 'igual o mas grande que'
+#     # filter(id__lt=12) => id 'mas pequeño que' (less than)
+#     # filter(id__lte=12) => id 'igual o mas pequeño que'
+#     # filter(id__lte=12, title__contains="articulo") => id 'igual o mas pequeño que' y titulo 'igual a'. 2 Condiciones
+#     return render(request, 'articulos.html', {
+#         'articulos':articulos
+#     })
+
+# ######################################################
 ######################################################
+
 
 # Borrar un Registro
 def borrar_articulo(request,id):
