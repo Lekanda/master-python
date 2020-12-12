@@ -161,6 +161,10 @@ def articulos(request):
     articulos=Article.objects.filter(
         title="Articulo"
     ).exclude(public=False)
+
+    articulos=Article.objects.raw("SELECT * FROM miapp_article WHERE title='Articulo' AND public=0")
+
+
     # .all=>Saca  todos los registros de la DB
     # Tiene menos opciones que get()
     return render(request, 'articulos.html', {
