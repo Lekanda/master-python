@@ -142,8 +142,15 @@ nav ul li a:hover{
     padding: 5px;
 }
 .box form textarea{
-    height: 60px;
+    height: 100px;
+    width: 466px;
 }
+.box form label{
+    width: 100px;
+}
+/* .labelti{
+    width: 90%;
+} */
 
 
 

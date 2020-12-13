@@ -8,8 +8,9 @@
 {% block content %}
    <h1 class="title">Formularios en Django</h1>
 
-   <form action="{% url 'save' %}" method="GET">
-        <label for="title">Titulo</label>
+   <form action="{% url 'save' %}" method="POST">
+        {% csrf_token %}
+        <label for="title" id="labelti">Titulo</label>
         <input type="text" name="title" placeholder="Introduce el titulo del Articulo"/>
 
         <label for="content">Contenido</label>
