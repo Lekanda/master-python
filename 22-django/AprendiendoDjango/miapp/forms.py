@@ -8,3 +8,11 @@ class FormArticle(forms.Form):
         label="Contenido",
         widget=forms.Textarea
     )
+    public_options=[
+        (1, 'Si'),
+        (0, 'No')
+    ]
+    public=forms.TypedChoiceField(
+        label="Publicado?",
+        choices = public_options
+    )
