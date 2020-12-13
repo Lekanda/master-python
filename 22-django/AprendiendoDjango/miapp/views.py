@@ -2,6 +2,8 @@ from django.shortcuts import render, HttpResponse, redirect
 from miapp.models import Article
 from django.db.models import Q
 from miapp.forms import FormArticle
+# Libreria de mensajes FLASH
+from django.contrib import messages
 
 
 # Create your views here.
@@ -112,27 +114,33 @@ def create_full_article(request):
 
         if formulario.is_valid():
             data_form=formulario.cleaned_data
+
             title=data_form.get('title')
             content=data_form['content']
             public=data_form['public']
 
             articulo=Article(
-                title = title,
-                content = content,
-                public = public
+            title = title,
+            content = content,
+            public = public
             )
-        articulo.save()
-        return redirect('articulos')
-        # return HttpResponse(articulo.title + ' - ' + articulo.content + ' - ' + str(articulo.public))
+
+            articulo.save()
+
+            # Crear mensaje FLASH (Sesion que solo se muestra una vez)
+            messages.success(request, f'Has creado el Articulo {articulo.id}: {articulo.title} ')
+
+
+            return redirect('articulos')
+            # return HttpResponse(articulo.title + ' - ' + articulo.content + ' - ' + str(articulo.public))
     else:
-        formulario = FormArticle()
+        formulario=FormArticle()
+
+    return render(request, 'create_full_article.html' ,{'form': formulario})
 
 
 
-    formulario=FormArticle()
-    return render(request, 'create_full_article.html' ,{
-        'form': formulario
-    })
+    
 
 
 

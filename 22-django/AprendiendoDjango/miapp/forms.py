@@ -1,4 +1,7 @@
+# Importa la libreria de formularios
 from django import forms
+# Importa la libreria de validacion
+from django.core import validators
 
 class FormArticle(forms.Form):
     #### TITULO #########
@@ -12,20 +15,25 @@ class FormArticle(forms.Form):
             attrs={
                 'placeholder':'Introduce Titulo del Articulo',
                 'class':'titulo_form_article'
-
             }
-        )
+        ),
+        validators=[
+            validators.MinLengthValidator(4, 'Pon un titulo mas descriptivo!'),
+            validators.RegexValidator('^[A-Za-z0-9 .ñ-]*$','No se permiten simbolos', 'invalid_title')
+        ]
     )
     #### CONTENIDO #########
     content = forms.CharField(
         label="Contenido",
-        max_length=250,
         required=True,
-        widget=forms.Textarea
+        widget=forms.Textarea,
+        validators = [
+            validators.MaxLengthValidator(700, 'Texto de articulo demasiado largo solo 700 caracteres')
+        ]
     )
     # Actualiza en widget de content
     content.widget.attrs.update({
-        'placeholder':'Introduce Contenido del Articulo',
+        'placeholder':'Introduce Contenido del articulo',
         'class':'contenido_form_article',
         'id':'contenido_form'
     })
