@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'miapp' # App creada por mi. Asi se da de alta
+    'miapp.apps.MiappConfig' 
+     # App creada por mi. Asi se da de alta
+     # .apps.MiappConfig => cambiar nombre de app en apps.py
 ]
 
 MIDDLEWARE = [
