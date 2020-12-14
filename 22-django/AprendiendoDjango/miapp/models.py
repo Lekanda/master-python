@@ -3,10 +3,10 @@ from django.db import models
 # Create your models here.
 
 class Article(models.Model):
-    title = models.CharField(max_length=150)
-    content = models.TextField()
-    image = models.ImageField(default='null')
-    public = models.BooleanField()
+    title = models.CharField(max_length=150, verbose_name="Titulo")
+    content = models.TextField(verbose_name="Contenido")
+    image = models.ImageField(default='null', verbose_name="Miniatura")
+    public = models.BooleanField(verbose_name="¿Publicado?")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
