@@ -19,23 +19,27 @@
     <ul>
         {% for articulo in articulos %}
             <li>
-            <h4 class="title2">Articulo: {{articulo.id}} - {{articulo.title}}</h4>
-            <span>{{articulo.created_at}}</span>
-            {% if articulo.public %}
-                <strong class="publicado">Publicado</strong>
-            {% else %}    
-                <strong class="privado">Privado</strong>
-            {% endif %}
-            <br/>
-            <br/>
-            <p>
-                {{articulo.content}}
-                <br/><br/>
+                {% if articulo.image != 'null' and articulo.image.url|length >= 1 %}
+                    <img src="{{articulo.image.url}}"/>
+                {% endif %}
+
+                <h4 class="title2">Articulo: {{articulo.id}} - {{articulo.title}}</h4>
+                <span>{{articulo.created_at}}</span>
+                {% if articulo.public %}
+                    <strong class="publicado">Publicado</strong>
+                {% else %}    
+                    <strong class="privado">Privado</strong>
+                {% endif %}
                 <br/>
-                <a href="{% url 'borrar' id=articulo.id %}">Eliminar</a>
-            </p>
-            <hr/>
-            <br/>
+                <br/>
+                <p>
+                    {{articulo.content}}
+                    <br/><br/>
+                    <br/>
+                    <a href="{% url 'borrar' id=articulo.id %}">Eliminar</a>
+                </p>
+                <hr/>
+                <br/>
             </li>
         {% endfor %}
     </ul>
