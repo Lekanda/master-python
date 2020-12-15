@@ -184,7 +184,7 @@ def editar_articulo(request, id):
 ######################################################
 # Lista todos los registros de la tabla.
 def articulos(request):
-    articulos=Article.objects.all().order_by('-id')
+    articulos=Article.objects.filter(public=True).order_by('-id')
     # .all=>Saca  todos los registros de la DB
     # Tiene menos opciones que get()
     return render(request, 'articulos.html', {
