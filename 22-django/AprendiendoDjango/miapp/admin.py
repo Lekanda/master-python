@@ -8,3 +8,15 @@ class  ArticleAdmin(admin.ModelAdmin):
 # Al registrarlos crea un CRUD de los datos en el Admin Panel
 admin.site.register(Article,ArticleAdmin)
 admin.site.register(Category)
+
+
+
+title="Administracion de Gestor de Articulos 5"
+# Configurar cabecera del AdminPanel
+admin.site.site_header=title
+# Configurar el titulo del AdminPanel
+admin.site.site_title=title
+# Configura  el nombre de la pestaña  y subtitulo
+admin.site.index_title="Panel de Admin"
+
+

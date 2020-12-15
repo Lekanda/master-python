@@ -56,6 +56,8 @@ urlpatterns = [
 
 ]
 
+
+
 # Configuracion para cargar imagenes.
 # Sí DEBUD es true. True= Local
 if settings.DEBUG:
