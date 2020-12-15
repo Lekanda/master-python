@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# Con esto accedemos a la confi de carpeta media en settings
+from django.conf import settings
+
 #importar app con mis vistas
 # from miapp import views
 import miapp.views
@@ -47,6 +50,14 @@ urlpatterns = [
 
     path('save-article/', miapp.views.save_article, name="save"),
     path('create-article/', miapp.views.create_article, name="create"),
-    path('create-full-article/', miapp.views.create_full_article, name="create_full")
+    path('create-full-article/', miapp.views.create_full_article, name="create_full"),
+
+
 
 ]
+
+# Configuracion para cargar imagenes.
+# Sí DEBUD es true. True= Local
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
