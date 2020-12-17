@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %} 
+
+        {% endblock %} 
+        | Django
+    </title>
+    
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
+</head>
+
+<body>
+    <!-- Cabezera de la Pagina -->
+    <header>
+        <div id="logotipo">
+            <!--Logo de Django-->
+            <img src="{% static 'images/logo.png' %}"/>
+            <h1>Proyecto 2 Django</h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'inicio' %}">Inicio</a>
+            </li>
+            <li>
+                <a href="{% url 'about' %}">Sobre Mi</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="barra">
+        <span class="esquina-izquierda"></span>
+        <span class="relleno-barra"></span>
+        <span class="esquina-derecha"></span>
+    </div>
+
+    <div id="content">
+        <div class="box">
+            <h2 class="title">Contenido</h2>
+            <img src="{% static 'images/logo.png' %}"/>
+            {% block content %}
+                <!-- <strong>Contenido del Bloque original</strong> -->
+            {% endblock %}
+        </div>
+    </div>
+
+    <footer>
+        Master en Python con Django &copy; Andres Bernaola - {% now "d/m/Y" %}
+    </footer>    
+</body>
+
+</html>
