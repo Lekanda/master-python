@@ -8,8 +8,8 @@ class Page(models.Model):
     content = models.TextField(verbose_name="Contenido")
     slug = models.CharField(unique=True,max_length=150, verbose_name="URL")
     visible = models.BooleanField(verbose_name="Visible")
-    created_at = models.models.DateTimeField(auto_now_add=True, verbose_name="Creado el ")
-    updated_at = models.models.DateTimeField(auto_now=True, verbose_name="Actualizado el ")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Creado el ")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Actualizado el ")
 
     class Meta:
        verbose_name = "Pagina"
