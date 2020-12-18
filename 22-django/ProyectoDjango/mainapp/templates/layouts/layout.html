@@ -29,9 +29,11 @@
             <li>
                 <a href="{% url 'inicio' %}">Inicio</a>
             </li>
-            <li>
-                <a href="{% url 'about' %}">Sobre Mi</a>
-            </li>
+            {% for page in pages %}
+                <li>
+                <a href="#">{{page.1}}</a>
+                </li>
+            {% endfor %}
         </ul>
     </nav>
     <div class="barra">
