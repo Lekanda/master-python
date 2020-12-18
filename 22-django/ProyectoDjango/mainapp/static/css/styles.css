@@ -18,13 +18,13 @@
     float: none;
 }
 body{
-    background-color: rgb(245, 245, 166);
+    background-color: rgb(166 212 245);
 }
 /*Estilos Cabezera*/
 header{
     width: 1212px;
     height: 140px;
-    background-color:#9ed671;
+    background-color: #214571;
     margin: 0 auto;
     box-shadow: 15px 22px 22px #45751e;
 }
@@ -54,8 +54,8 @@ nav{
     width: 1250px;
     height: 40px;
     margin: 0 auto;
-    background-color :#8ad68b;
-    border: 1px solid #93c391;
+    background-color :#aac6de;
+    border: 1px solid #84a5ef;
     box-shadow: 15px 22px 22px #45751e;
     font-size: 18px;
 }
@@ -71,7 +71,7 @@ nav ul li a{
     display: block;
     padding-left: 15px;
     padding-right: 15px;
-    color: #2ba977;
+    color:#5269bf;
 }
 nav ul li a:hover{
     background: #2ba977;
@@ -117,7 +117,7 @@ nav ul li a:hover{
     margin-top: 50px;
 }
 .box{
-    background:rgb(245, 245, 166);
+    background: rgb(181 245 255);
     width: 95%;
     min-height: 930px;
     padding: 20px;
@@ -283,4 +283,12 @@ footer{
     padding-top: 20px;
     padding-bottom: 20px;
     box-shadow: 0px 0px 20px #45751e;
+}
+
+
+
+/* Mis estilos */
+
+.txtazul{
+    color:#2a999e
 }
