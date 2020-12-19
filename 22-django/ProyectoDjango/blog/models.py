@@ -27,9 +27,8 @@ class Article(models.Model):
     # Relacion de cada articulo tiene un usuario
     user=models.ForeignKey(User, verbose_name='Usuario', on_delete=models.CASCADE)
     # Relacion muchos a muchos: Un ariculo tiene muchas categorias. una categoria puede estar en muchos articulos
-    # null=True => Si no se añade nada se pone como null
     # blank=True => No es obligatorio
-    categories= models.ManyToManyField(Category, verbose_name='Categorias', null=True, blank=True)
+    categories= models.ManyToManyField(Category, verbose_name='Categorias', blank=True)
     create_at=models.DateTimeField(auto_now_add=True, verbose_name='Creado el')
     updated_at=models.DateTimeField(auto_now=True, verbose_name='Actualizado el')
 
