@@ -26,7 +26,7 @@ header{
     height: 140px;
     background-color: #214571;
     margin: 0 auto;
-    box-shadow: 15px 22px 22px #45751e;
+    box-shadow: 15px 22px 22px #1e5f7e;
 }
 #logotipo{
     width: 32%;
@@ -49,6 +49,8 @@ header{
     font-weight: lighter;
     color: #2ba977;
 }
+
+
 /* Estilos barra de navegacion*/
 nav{
     width: 1250px;
@@ -56,29 +58,65 @@ nav{
     margin: 0 auto;
     background-color :#aac6de;
     border: 1px solid #84a5ef;
-    box-shadow: 15px 22px 22px #45751e;
+    box-shadow: 15px 22px 22px #1e5f7e;
     font-size: 18px;
 }
-nav ul{
+nav > ul{
     list-style: none;
     text-decoration: none;
 }
-nav ul li{
+nav > ul > li{
     line-height: 40px;
     float: left;
 }
-nav ul li a{
+nav > ul > li > a{
     display: block;
     padding-left: 15px;
     padding-right: 15px;
     color:#5269bf;
 }
-nav ul li a:hover{
+nav > ul > li > a:hover{
     background: #2ba977;
     color: #03380c;
-    box-shadow: 0px 0px 20px #45751e;
+    box-shadow: 0px 0px 20px #1e5f7e;
     transition: all 300ms;
 }
+/* Menu desplegable */
+nav > ul > li > ul{
+    display:none;
+    position: absolute;
+    color: #aac6de;
+    text-align: left;
+    width: 160px;
+    box-shadow: 0px 2px 2px #aac6de;
+}
+nav > ul > li:hover > ul{
+    display: block;
+    color: #aac6de;
+    margin: 0px;
+    list-style: none;
+}
+nav > ul > li:hover > ul > li{
+    background: #aac6de;
+    border-bottom: 1px solid  #98b3ec;
+    padding: 8px;
+    line-height: 25px;
+    font-size: 12px;
+    transition: all 1300ms;
+}
+nav > ul > li:hover > ul > li a{
+    color: #5269bf;
+    transition: all 300ms;
+}
+nav > ul > li:hover > ul > li:hover{
+    background: #bad5e9;
+}
+nav > ul > li:hover > ul > li:hover a{
+    display: block;
+    color: rgb(0, 86, 136);
+    text-align: center;
+}
+/* Fin de menu desplegable */
 
 .barra{
     width: 1250px;
@@ -89,21 +127,21 @@ nav ul li a:hover{
 .esquina-izquierda{
     display: block;
     border-left: 29px solid transparent;
-    border-top: 10px solid #45751e;
+    border-top: 10px solid #3e5b75;
     float: left;
 }
 
 .esquina-derecha{
     display: block;
     border-right: 29px solid transparent;
-    border-top: 10px solid #45751e;
+    border-top: 10px solid #3e5b75;
     float: right;
 }
 
 .relleno-barra{
     display: block;
     width: 1192px;
-    background: #45751e;
+    background: #3e5b75;
     height: 10px;
     float: left;
 }
@@ -123,7 +161,7 @@ nav ul li a:hover{
     padding: 20px;
     border: 1px solid #9b5f48;
     border-radius: 2px;
-    box-shadow: 0px 0px 20px #45751e;
+    box-shadow: 0px 0px 20px #1e5f7e;
     margin: 0 auto;
 }
 .box form {
@@ -283,15 +321,15 @@ nav ul li a:hover{
 }
 footer{
     width: 1250px;
-    background-color: #9ed671;
-    border: 1px solid #9b5f48;
-    color: #2ba977;
+    background-color: #214571;
+    border: 1px solid #043979;
+    color: #5278ca;
     text-align: center;
     margin: 0 auto;
     margin-bottom: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
-    box-shadow: 0px 0px 20px #45751e;
+    box-shadow: 0px 0px 20px #1e5f7e;
 }
 
 
