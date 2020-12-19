@@ -1,4 +1,7 @@
 from django.db import models
+from ckeditor.fields import RichTextField
+from django.contrib.auth.models import User
+
 
 # Create your models here.
 
@@ -14,3 +17,26 @@ class Category(models.Model):
     def __str__(self):
         # al crear la categoria imprime el return(nombre de categoria)
         return self.name
+
+
+class Article(models.Model):
+    title=models.CharField(max_length=150,verbose_name='Titulo')
+    content=RichTextField(verbose_name='Contenido')
+    image=models.ImageField(default='null', verbose_name='Imagen')
+    public=models.BooleanField(verbose_name='¿Publicado?')
+    # Relacion de cada articulo tiene un usuario
+    user=models.ForeignKey(User, verbose_name='Usuario', on_delete=models.CASCADE)
+    # Relacion muchos a muchos: Un ariculo tiene muchas categorias. una categoria puede estar en muchos articulos
+    # null=True => Si no se añade nada se pone como null
+    # blank=True => No es obligatorio
+    categories= models.ManyToManyField(Category, verbose_name='Categorias', null=True, blank=True)
+    create_at=models.DateTimeField(auto_now_add=True, verbose_name='Creado el')
+    updated_at=models.DateTimeField(auto_now=True, verbose_name='Actualizado el')
+
+    class Meta:
+        verbose_name='Articulo'
+        verbose_name_plural='Articulos'
+    # Metodo Magico
+    def __str__(self):
+        # al crear la categoria imprime el return(titulo de articulo)
+        return self.title
