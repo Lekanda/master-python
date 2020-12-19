@@ -26,6 +26,6 @@ urlpatterns = [
     path('', views.index, name="index"),
     path('inicio/', views.index, name="inicio"),
 
-    path('pagina/', pages.views.page, name="page")
+    path('pagina/<str:slug>', pages.views.page, name="page")
 
 ]
