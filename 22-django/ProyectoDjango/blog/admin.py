@@ -7,7 +7,12 @@ class CategoryAdmin(admin.ModelAdmin):
     readonly_fields=('create_at',)
 
 class ArticleAdmin(admin.ModelAdmin):
-    readonly_fields=('create_at', 'updated_at',)
+    readonly_fields=('user','create_at', 'updated_at',)
+
+    def save_model(self,request,obj,form,change):
+        if not obj.user_id:
+            obj.user_id=request.user.id
+        obj.save()
 
 
 

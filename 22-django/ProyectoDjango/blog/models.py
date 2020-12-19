@@ -25,7 +25,7 @@ class Article(models.Model):
     image=models.ImageField(default='null', verbose_name='Imagen')
     public=models.BooleanField(verbose_name='¿Publicado?')
     # Relacion de cada articulo tiene un usuario
-    user=models.ForeignKey(User, verbose_name='Usuario', on_delete=models.CASCADE)
+    user=models.ForeignKey(User, editable=False,verbose_name='Usuario', on_delete=models.CASCADE)
     # Relacion muchos a muchos: Un ariculo tiene muchas categorias. una categoria puede estar en muchos articulos
     # blank=True => No es obligatorio
     categories= models.ManyToManyField(Category, verbose_name='Categorias', blank=True)
