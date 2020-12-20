@@ -32,9 +32,11 @@
             <li>
                 <a href="{% url 'list_articles' %}">Categorias</a>
                 <ul>
-                    <li><a href="{% url 'inicio' %}">Categoria1</a></li>
-                    <li><a href="{% url 'inicio' %}">Categoria2</a></li>
-                    <li><a href="{% url 'inicio' %}">Categoria3</a></li>
+                    {% for category in categories %}
+                        <li>
+                            <a href="{% url 'inicio' %}">{{category.1}}</a>
+                        </li>
+                    {% endfor %}
                 </ul>
             </li>
             {% for page in pages %}
