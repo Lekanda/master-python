@@ -25,5 +25,13 @@ def category(request, category_id):
     except Category.DoesNotExist:
         return render(request,'errores/404.html')
     
+def article(request, article_id):
 
-# category = get_object_or_404(Category,id=category_id)
+    try:
+        article = Article.objects.get(id=article_id)
+
+        return render(request, 'articles/detail.html', {
+        'article': article
+    })
+    except Article.DoesNotExist:
+        return render(request,'errores/404.html')

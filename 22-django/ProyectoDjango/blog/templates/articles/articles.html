@@ -7,11 +7,14 @@
                 {% endif %}
 
                 <div class="data">
-                    <h2 class="titu">{{article.title}}</h2>
+                    <h2 class="titu">
+                        <a href="{% url 'article' article.id%}">{{article.title}}</a>
+                    </h2>
                     <p>
                         {% for category in article.categories.all %}
-                            <a href="{% url 'category' category.id %}" >{{category.name}}</a>
-
+                            <a href="{% url 'category' category.id %}" >
+                                {{category.name}}
+                            </a>
                             {% if forloop.counter < article.categories.all|length %}
                                 {{'-'}}
                             {% endif %}
