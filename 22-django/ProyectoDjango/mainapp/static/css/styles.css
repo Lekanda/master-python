@@ -155,14 +155,23 @@ nav > ul > li:hover > ul > li:hover a{
     margin-top: 50px;
 }
 .box{
-    background: rgb(181 245 255);
+    background: rgb(120 182 191);
     width: 95%;
     min-height: 930px;
     padding: 20px;
-    border: 1px solid #9b5f48;
-    border-radius: 2px;
+    border: 1px solid #7685ef;
+    border-radius: 3px;
     box-shadow: 0px 0px 20px #1e5f7e;
     margin: 0 auto;
+}
+.box .image{
+    width: 45%;
+    float: left;
+    margin: 20px;
+    border: 2px solid rgb(73, 73, 112);
+}
+.box .image img{
+    width: 100%;
 }
 .box a{
     color:#214571;
@@ -264,6 +273,8 @@ nav > ul > li:hover > ul > li:hover a{
     font-size: 30px;
     margin-bottom: 10px;
     margin-top: 5px;
+    margin-left: 35px;
+    font-size: 45px;
 }
 .date{
     display: block;
