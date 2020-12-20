@@ -4,5 +4,18 @@
 
 {% block content %}
     <h1 class="title">{{category.name}}</h1>
-    {% include 'articles/articles.html' %}
+
+    <p>{{category.description}}</p>
+
+    {% include 'articles/articles.html' with articles=category.articles.all%}
 {% endblock %}
+
+{% comment %} 
+1. Relacion Inversa: Al haber una relacion de muchos a muchos entre dos tablas, se crea una relacion. De esta formas podemos coger datos de loas dos tablas:
+                articles=category.article_set.all
+2. Desde el modelo Category cogemos datos de Article. 'SOLO LOS QUE ESTAN RELACIONADOS'
+3. Tambien se puede hacer de otra formas.
+    3.1.        articles=category.articles.all
+    3.2 Para hacerlo asi en el modelo models.py configurar en el campo de catagories en la tabla Article:
+                related_name="articles"
+{% endcomment %}
