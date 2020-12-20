@@ -3,27 +3,38 @@
 {% block title %}Error 404{% endblock title %}
 
 {% block content %}
-    <h1 class="title">Error 404</h1>
-    <span></i>Revisa los datos introducidos</span>
-    <p>
-        <i class="fas fa-exclamation-triangle fa-7x"  style="background:#b5f5ff" ></i>
-        Se ha producido un error en la Base de Datos.
-    </p>
-    <br><br><br>
-    <i class="fas fa-quote-left fa-2x fa-pull-left" ></i>
-    Las causas del error pueden ser varias. Es posible que la categoria que se este intentando 
-    <br>
-    <br><br><br>
-    <i class="fas fa-arrow-right fa-2x fa-pull-right fa-border"></i>
-    Gatsby believed in the green light, the orgastic future that year by year recedes before us.
-    <br><br><br>
-    <span class="fa-stack fa-8x" style="background:#b5f5ff" >
-        <i class="fas fa-square fa-stack-2x"></i>
-        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-    </span>
-    <span class="fa-stack fa-2x">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fas fa-flag fa-stack-1x fa-inverse"></i>
-    </span>
+    <div class="box-error">
+        <hr>
+        <h1 class="title2">
+            <i class="fas fa-exclamation-triangle fa-sm"  style="background:#b5f5ff" ></i>
+            Error 404
+        </h1>
+        <hr>
+    </div>
+
+
+    <div class="box-error2">
+        <span>Fallos que pueden causar Errores</span>
+    </div>
+
+
+    <div class="box-error3" >
+        <div class="box-error4" >
+            <i class="fas fa-arrow-alt-circle-right fa-9x" style="background:#b5f5ff" ></i>
+        </div>
+        <div class="box-error5" >
+            <ul class="lista-errores">
+                <li>Puede ser que se este intentando conectar a una <strong>Categoria</strong> que no existe.</li>
+                <li>
+                    Se este intentando conectar a un <strong>Articulo</strong> que no existe.
+                </li>
+                <li>Otros Errores de conexion.</li>
+                <li>Si el fallo persiste ponerse en contacto con el Administrador en seccion de contactos.</li>
+              </ul>
+        </div>
+        <div class="box-error6" >
+            <i class="fab fa-python fa-6x"></i>
+        </div>
+    </div>
 
 {% endblock %}
