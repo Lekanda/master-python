@@ -12,10 +12,10 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class ArticleAdmin(admin.ModelAdmin):
     readonly_fields=('user','create_at', 'updated_at',)
-    search_fields=('title', 'content')
-    list_filter=('public',)
-    list_display=('title','public','create_at','updated_at','user_id')
-    ordering=('public','title',)
+    search_fields=('title', 'content','user__username','categories__name')
+    list_display=('title','public','user','create_at','updated_at','user_id')
+    list_filter =('public','user__username','categories__name')
+    # ordering=('public','user_username','categories__name')
 
     def save_model(self,request,obj,form,change):
         if not obj.user_id:
