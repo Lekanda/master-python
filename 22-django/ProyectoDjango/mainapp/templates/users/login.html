@@ -5,6 +5,13 @@
 
 {% block content %}
     <h1 class="title">{{title}}</h1>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-warning">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
 
     {{register_form.errors}}
 
