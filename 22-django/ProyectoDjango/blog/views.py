@@ -2,9 +2,10 @@ from django.shortcuts import render,get_object_or_404
 from django.core.paginator import Paginator
 # Importar los modelos
 from blog.models import Category, Article
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-
+@login_required(login_url="login") # Decorador: Login 
 def list(request):
     # Sacar Articulos
     articles=Article.objects.all()
@@ -20,6 +21,7 @@ def list(request):
         'articles':page_articles
     })
 
+@login_required(login_url="login") # Decorador: Login 
 def category(request, category_id):
     try:
         category = Category.objects.get(id=category_id)
@@ -31,7 +33,9 @@ def category(request, category_id):
     })
     except Category.DoesNotExist:
         return render(request,'errores/404.html')
-    
+ 
+
+@login_required(login_url="login") # Decorador: Login 
 def article(request, article_id):
 
     try:
