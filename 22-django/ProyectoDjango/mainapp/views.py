@@ -5,7 +5,6 @@ from mainapp.forms import RegisterForm
 from django.contrib.auth import authenticate, login, logout
 
 
-
 # Create your views here.
 
 def index(request):
@@ -14,11 +13,13 @@ def index(request):
         'title':'Inicio'
     })
 
+
 def about(request):
 
     return render(request, 'mainapp/about.html', {
         'title':'Sobre Nosotros'
     })
+
 
 def register_page(request):
     
@@ -61,3 +62,4 @@ def  login_page(request):
     return render(request, 'users/login.html', {
         'title':'Identificate'
     })
+
