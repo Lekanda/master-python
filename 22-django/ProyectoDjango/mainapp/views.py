@@ -52,7 +52,7 @@ def  login_page(request):
 
         if user is not None:
             login(request, user)
-            messages.success(request, 'Te has Logeado correctamente!!')
+            # messages.success(request, 'Te has Logeado correctamente!!')
             return redirect('inicio')
         else:
             messages.warning(request, 'No estas logedado!!')

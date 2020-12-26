@@ -30,7 +30,8 @@
             <li>
                 <a href="{% url 'inicio' %}">Inicio</a>
             </li>
-            <li>
+            {% if user.email %}
+                <li>
                 <a href="{% url 'list_articles' %}">Categorias</a>
                 <ul>
                     {% for category in categories %}
@@ -39,14 +40,18 @@
                         </li>
                     {% endfor %}
                 </ul>
-            </li>
-            {% for page in pages %}
-                <li>
-                    <a href="{% url 'page' page.2 %}">
-                        {{page.1}}
-                    </a>
                 </li>
-            {% endfor %}
+                {% for page in pages %}
+                    <li>
+                        <a href="{% url 'page' page.2 %}">
+                            {{page.1}}
+                        </a>
+                    </li>
+                {% endfor %}
+            {% endif %}
+
+
+            
 
             <li>
                 <a href="{% url 'register' %}">Registro</a>
