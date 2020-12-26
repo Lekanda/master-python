@@ -6,10 +6,25 @@
 {% block content %}
     <h1 class="title">{{title}}</h1>
 
+    {{register_form.errors}}
+
     <form method="post" action="">
         {% csrf_token %}
         
-        {{register_form.as_p}}
+        {% comment %}RegisterForm
+            {{register_form.as_p}}
+        {% endcomment %}
+
+        {% comment %} 
+            {{register_form.username.label}}
+            {{register_form.username}} 
+        {% endcomment %}
+
+        {% for field in register_form %}
+            {{field.label}}
+            {{field}}
+        {% endfor %}
+
 
         <input type="submit" value="Registrarse"/>
     </form>
