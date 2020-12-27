@@ -10,7 +10,7 @@ def index():
     return "Aprendiendo FLASK"
 
 # Crear ruta Informacion
-@app.route('/informacion/<nombre>/<apellidos>')
+@app.route('/informacion/<string:nombre>/<string:apellidos>')
 def informacion(nombre,apellidos):
 
     return f"""
