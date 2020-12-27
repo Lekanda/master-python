@@ -1,29 +1,43 @@
 # Importar Flask
 from flask import Flask
 
+
+
 # Crear la app general de Flask
 app=Flask(__name__)
+
+
+
 
 # Crear ruta index
 @app.route('/')
 def index():
     return "Aprendiendo FLASK"
 
+
+# Para que los valores sean opcionales en ruta informacion.
+@app.route('/informacion')
 # Crear ruta Informacion
+@app.route('/informacion/<string:nombre>')
 @app.route('/informacion/<string:nombre>/<string:apellidos>')
-def informacion(nombre,apellidos):
+def informacion(nombre=None,apellidos=None):
+    txt=""
+    if nombre != None and apellidos != None :
+        txt =f"Bienvenido {nombre} {apellidos}"
 
     return f"""
                 <h1>Informacion</h1>
                 <p>Esta es la pagina de informacion</p>
-                <h3>Usuario: {nombre} {apellidos}</h3>
+                <h3>Usuario: {txt}</h3>
             """
+
 
 # Crear ruta Contacto
 @app.route('/contacto')
 def contacto():
 
     return "<h1>Contacto</h1>"
+
 
 # crear ruta de lenguales de Pro
 @app.route('/lenguajes-de-programacion')
