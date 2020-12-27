@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Flask en Python
+        {% endblock title %} | Aprendiendo FLASK
+    </title>
+</head>
+<body>
+    <h1>Aprendiendo FLASK</h1>
+    <hr/>
+        <ul>
+            <li>
+                <a href="/">Inicio</a>
+            </li>
+            <li>
+                <a href="{{ url_for('informacion') }}">Informacion</a>
+            </li>
+            <li>
+                <a href="{{ url_for('contacto') }}">Contacto</a>
+            </li>
+            <li>
+                <a href="{{ url_for('lenguajes') }}">Lenguajes de Programacion</a>
+            </li>
+        </ul>
+    <hr/>
+    
+    <section id="content">
+        {% block content %}
+
+        {% endblock content %}
+    </section>
+
+    <hr/>
+    <footer>
+        Master en Python y Flask.
+    </footer>
+
+</body>
+</html>

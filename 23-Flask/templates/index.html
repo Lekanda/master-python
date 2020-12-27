@@ -1,27 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask</title>
-</head>
-<body>
-    <h1>Aprendiendo FLASK</h1>
-    <hr/>
-        <ul>
-            <li>
-                <a href="/">Inicio</a>
-            </li>
-            <li>
-                <a href="{{ url_for('informacion') }}">Informacion</a>
-            </li>
-            <li>
-                <a href="{{ url_for('contacto') }}">Contacto</a>
-            </li>
-            <li>
-                <a href="{{ url_for('lenguajes') }}">Lenguajes de Programacion</a>
-            </li>
-        </ul>
-    <hr/>
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block title %}
+    Inicio
+{% endblock title %}
+
+{% block content %}
+    <h3>Contenido del Index</h3>
+{% endblock content %}
