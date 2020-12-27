@@ -1,5 +1,5 @@
 # Importar Flask
-from flask import Flask
+from flask import Flask, redirect, url_for
 
 
 
@@ -34,7 +34,13 @@ def informacion(nombre=None,apellidos=None):
 
 # Crear ruta Contacto
 @app.route('/contacto')
-def contacto():
+@app.route('/contacto/<redireccion>')
+def contacto(redireccion=None):
+    # 1. Hay que importar de Flask redirect y url_for.
+    # 2. Al usar url_for podemos llamar a la url por el nombre de la funcion que ejecuta, no por la url.
+    # 3. Este IF redirige a la pagina 'lenguajes-de-programacion', sí el parametro pasado por la url es True.
+    if redireccion is not None:
+        return redirect(url_for('lenguajes'))
 
     return "<h1>Contacto</h1>"
 
