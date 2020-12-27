@@ -1,7 +1,8 @@
 # Importar Flask
-from flask import Flask, redirect, url_for
-
-
+from flask import Flask, redirect, url_for, render_template
+# Redirect => Para redirigir a otra pagina
+# Url_for => podemos llamar a la url por el nombre de la funcion.
+# Render_template => Para pooder renderizar plantillas.
 
 # Crear la app general de Flask
 app=Flask(__name__)
@@ -12,7 +13,7 @@ app=Flask(__name__)
 # Crear ruta index
 @app.route('/')
 def index():
-    return "Aprendiendo FLASK"
+    return render_template('index.html')
 
 
 # Para que los valores sean opcionales en ruta informacion.
@@ -24,12 +25,12 @@ def informacion(nombre=None,apellidos=None):
     txt=""
     if nombre != None and apellidos != None :
         txt =f"Bienvenido {nombre} {apellidos}"
+    elif apellidos == None:
+        txt =f"Bienvenido {nombre}"
+    elif nombre == None:
+        txt =f"Bienvenido {apellidos}"
 
-    return f"""
-                <h1>Informacion</h1>
-                <p>Esta es la pagina de informacion</p>
-                <h3>Usuario: {txt}</h3>
-            """
+    return render_template('informacion.html',txt=txt)
 
 
 # Crear ruta Contacto

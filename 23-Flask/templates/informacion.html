@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask</title>
+</head>
+<body>
+    <h1>Informacion</h1>
+    <p>Esta es la pagina de informacion</p>
+    <h3>Usuario: {{txt}}</h3>
+    {{txt|safe}}
+</body>
+</html>
+
+
+{% comment %} 
+- {{txt|safe}} => Dice que el codigo que hay dentro es HTML. Sí esta dentro de una etiqueta no hace falta.
+- 
+{% endcomment %}
+
+
