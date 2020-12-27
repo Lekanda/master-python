@@ -4,10 +4,32 @@ from flask import Flask
 # Crear la app general de Flask
 app=Flask(__name__)
 
-# Crear ruta
+# Crear ruta index
 @app.route('/')
 def index():
     return "Aprendiendo FLASK"
+
+# Crear ruta Informacion
+@app.route('/informacion')
+def informacion():
+
+    return "<h1>Informacion</h1>"
+
+# Crear ruta Contacto
+@app.route('/contacto')
+def contacto():
+
+    return "<h1>Contacto</h1>"
+
+# crear ruta de lenguales de Pro
+@app.route('/lenguajes-de-programacion')
+def lenguajes():
+
+    return "<h1>Lenguajes de Programacion</h1>"
+
+
+
+
 
 # Identifica que el nombre de la aplicacion de flask  sea de un proyecto de Flask.
 if __name__ == '__main__':
