@@ -13,6 +13,7 @@ app=Flask(__name__)
 # Crear ruta index
 @app.route('/')
 def index():
+    
     return render_template('index.html')
 
 
@@ -43,14 +44,14 @@ def contacto(redireccion=None):
     if redireccion is not None:
         return redirect(url_for('lenguajes'))
 
-    return "<h1>Contacto</h1>"
+    return render_template('contacto.html')
 
 
 # crear ruta de lenguales de Pro
 @app.route('/lenguajes-de-programacion')
 def lenguajes():
 
-    return "<h1>Lenguajes de Programacion</h1>"
+    return render_template('lenguajes.html')
 
 
 
