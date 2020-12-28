@@ -25,13 +25,17 @@ def date_now():
 # Crear ruta index
 @app.route('/')
 def index():
-    
-    return render_template('index.html', 
+    edad=150
+    return render_template('index.html',
+                edad=edad,
                 dato1="Valor1",
                 dato2="Valor2",
                 lista=["Uno","Dos","Tres","Cuatro","Cinco"]
-
     )
+
+
+
+
 
 
 # Para que los valores sean opcionales en ruta informacion.
