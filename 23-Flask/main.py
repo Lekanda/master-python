@@ -85,11 +85,20 @@ def lenguajes():
 
 
 # Ruta para crear coche desde formualrio
-@app.route('/crear-coche')
+@app.route('/crear-coche', methods=['GET','POST'])
+# methods=['GET','POST']) => Habilita los metodos GET y POST
+
 def crear_coche():
     if request.method=='POST':
+        marca=request.form['marca']
+        modelo=request.form['modelo']
+        precio=request.form['precio']
+        ciudad=request.form['ciudad']
+
         cursor = mysql.connection.cursor()
-        cursor.execute(f" INSERT INTO coches VALUES(NULL, 'Lamborgini', 'Gallardo', 1000.10, 'Madrid')")
+        cursor.execute(" INSERT INTO coches VALUES(NULL,%s,%s,%s,%s)",
+                        (marca,modelo,precio,ciudad)
+        )
         # El commit guarda los cambios en la DB
         cursor.connection.commit()
 
