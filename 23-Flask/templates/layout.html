@@ -6,11 +6,20 @@
     <title>
         {% block title %} | Aprendiendo FLASK {% endblock title %} 
     </title>
+    <script src="https://kit.fontawesome.com/9b21360d5e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
 </head>
 <body>
-    <h1>Aprendiendo FLASK</h1>
-    <hr/>
+
+    <!-- Cabezera de la Pagina -->
+    <header>
+        <div id="logotipo">
+            <!--Logo de Django-->
+            <img src="{{url_for('static',filename='img/flask.png')}}"/>
+        </div>
+    </header>
+
+    <nav>
         <ul>
             <li>
                 <a href="/">Inicio</a>
@@ -25,18 +34,24 @@
                 <a href="{{ url_for('lenguajes') }}">Lenguajes de Programacion</a>
             </li>
         </ul>
-    <hr/>
-    
-    <section id="content">
-        {% block content %}
+    </nav>
+    <div class="barra">
+        <span class="esquina-izquierda"></span>
+        <span class="relleno-barra"></span>
+        <span class="esquina-derecha"></span>
+    </div>
 
-        {% endblock content %}
-    </section>
+    <div id="content">
+        <div class="box">
+            {% block content %}
+                <!-- <strong>Contenido del Bloque original</strong> -->
+            {% endblock %}
+        </div>
+    </div>
 
-    <hr/>
     <footer>
-        Master en Python y Flask.
-    </footer>
-
+        Master en Python con Django &copy; Andres Bernaola 
+    </footer>    
 </body>
+
 </html>
