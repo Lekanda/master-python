@@ -26,16 +26,14 @@ def date_now():
 @app.route('/')
 def index():
     edad=150
+    personas=['Paco','Pepe','Juan','Luis','Alberto']
     return render_template('index.html',
                 edad=edad,
                 dato1="Valor1",
                 dato2="Valor2",
-                lista=["Uno","Dos","Tres","Cuatro","Cinco"]
+                lista=["Uno","Dos","Tres","Cuatro","Cinco"],
+                personas=personas
     )
-
-
-
-
 
 
 # Para que los valores sean opcionales en ruta informacion.

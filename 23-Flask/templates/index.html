@@ -26,6 +26,16 @@
         </h2>
     {% endif %}
 
+
+    <h2>Listado de Personas</h2>
+    <ul>
+        {% for persona in personas %}
+            <li>{{loop.index}}. {{persona}}</li>
+        {% endfor %}
+    </ul>
+    {# loop.index => Nos da el indice de la lista  #}
+
+
     <p>
         {{dato1}}
         {{dato2}}
