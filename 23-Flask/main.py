@@ -7,19 +7,31 @@ from flask import Flask, redirect, url_for, render_template
 # Para importar fecha(Context Processors)
 from datetime import datetime
 
+from flask_mysqldb import MySQL
 
 # Crear la app general de Flask
 app=Flask(__name__)
-# (Context Processors)
+
+# Conexion a la DB
+app.config['MYSQL_HOST']='localhost'
+app.config['MYSQL_USER']='root'
+app.config['MYSQL_PASSWORD']='xa6nXxyZkaHENeJ3'
+app.config['MYSQL_DB']='proyectoflask'
+
+mysql = MySQL(app)
+
+
+
+
+
+
+# Context Processors
 @app.context_processor
 def date_now():
     return {
         'now':datetime.utcnow()
     }
-
 # EndPoints
-
-
 
 
 # Crear ruta index
