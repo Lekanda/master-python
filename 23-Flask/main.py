@@ -1,5 +1,5 @@
 # Importar Flask
-from flask import Flask, redirect, url_for, render_template
+from flask import Flask, redirect, url_for, render_template,request
 # Redirect => Para redirigir a otra pagina
 # Url_for => podemos llamar a la url por el nombre de la funcion.
 # Render_template => Para pooder renderizar plantillas.
@@ -85,14 +85,17 @@ def lenguajes():
 
 
 # Ruta para crear coche desde formualrio
-@app.route('/insertar-coche')
-def insertar_coche():
-    cursor = mysql.connection.cursor()
-    cursor.execute(f" INSERT INTO coches VALUES(NULL, 'Lamborgini', 'Gallardo', 1000.10, 'Madrid') ")
-    # El commit guarda los cambios en la DB
-    cursor.connection.commit()
+@app.route('/crear-coche')
+def crear_coche():
+    if request.method=='POST':
+        cursor = mysql.connection.cursor()
+        cursor.execute(f" INSERT INTO coches VALUES(NULL, 'Lamborgini', 'Gallardo', 1000.10, 'Madrid')")
+        # El commit guarda los cambios en la DB
+        cursor.connection.commit()
 
-    return redirect(url_for ('index'))
+        return redirect(url_for ('index'))
+    
+    return render_template('crear_coche.html')
 
 
 
