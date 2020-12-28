@@ -11,17 +11,15 @@ from flask_mysqldb import MySQL
 
 # Crear la app general de Flask
 app=Flask(__name__)
-
-# Conexion a la DB
-app.config['MYSQL_HOST']='localhost'
-app.config['MYSQL_USER']='root'
-app.config['MYSQL_PASSWORD']='xa6nXxyZkaHENeJ3'
-app.config['MYSQL_DB']='proyectoflask'
-
 mysql = MySQL(app)
 
-
-
+# Conexion a la DB
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'xa6nXxyZkaHENeJ3'
+app.config['MYSQL_DB'] = 'proyectoflask'
+# Mi MySQL esta en el puerto 3308. Diferente al curso
+app.config['MYSQL_PORT'] = 3308
 
 
 
@@ -31,9 +29,10 @@ def date_now():
     return {
         'now':datetime.utcnow()
     }
+
+
+
 # EndPoints
-
-
 # Crear ruta index
 @app.route('/')
 def index():
@@ -83,6 +82,18 @@ def contacto(redireccion=None):
 def lenguajes():
 
     return render_template('lenguajes.html')
+
+
+# Ruta para crear coche desde formualrio
+@app.route('/insertar-coche')
+def insertar_coche():
+    cursor = mysql.connection.cursor()
+    cursor.execute(f" INSERT INTO coches VALUES(NULL, 'Lamborgini', 'Gallardo', 1000.10, 'Madrid') ")
+    # El commit guarda los cambios en la DB
+    cursor.connection.commit()
+
+    return redirect(url_for ('index'))
+
 
 
 
