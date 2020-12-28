@@ -1,5 +1,5 @@
 # Importar Flask
-from flask import Flask, redirect, url_for, render_template,request
+from flask import Flask, redirect, url_for, render_template,request,flash
 # Redirect => Para redirigir a otra pagina
 # Url_for => podemos llamar a la url por el nombre de la funcion.
 # Render_template => Para pooder renderizar plantillas.
@@ -11,7 +11,10 @@ from flask_mysqldb import MySQL
 
 # Crear la app general de Flask
 app=Flask(__name__)
-mysql = MySQL(app)
+
+# LLave secreta para las sesiones.
+# Error: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+app.secret_key='clave_secreta_flask'
 
 # Conexion a la DB
 app.config['MYSQL_HOST'] = 'localhost'
@@ -20,6 +23,7 @@ app.config['MYSQL_PASSWORD'] = 'xa6nXxyZkaHENeJ3'
 app.config['MYSQL_DB'] = 'proyectoflask'
 # Mi MySQL esta en el puerto 3308. Diferente al curso
 app.config['MYSQL_PORT'] = 3308
+mysql = MySQL(app)
 
 
 
@@ -102,6 +106,7 @@ def crear_coche():
         # El commit guarda los cambios en la DB
         cursor.connection.commit()
 
+        flash('Coche nuevo en Base de Datos!')
         return redirect(url_for ('index'))
     
     return render_template('crear_coche.html')

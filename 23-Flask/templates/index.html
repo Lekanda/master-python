@@ -7,6 +7,19 @@
 
 {% block content %}
     <h1>Contenido del Index</h1>
+    <!-- with messages=get_flashed_messages()=> Mete en messages los flash creados en el main.py -->
+    {% with messages=get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div id=mss class="message alert-success" >
+                    {{message}}
+                    <button type="button" onClick="Hola">Eliminar</button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+
 
     {% include 'includes/edad.html' %}
     {% include 'includes/personas.html' %}
