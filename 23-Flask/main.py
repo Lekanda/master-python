@@ -4,8 +4,20 @@ from flask import Flask, redirect, url_for, render_template
 # Url_for => podemos llamar a la url por el nombre de la funcion.
 # Render_template => Para pooder renderizar plantillas.
 
+# Para importar fecha(Context Processors)
+from datetime import datetime
+
+
 # Crear la app general de Flask
 app=Flask(__name__)
+# (Context Processors)
+@app.context_processor
+def date_now():
+    return {
+        'now':datetime.utcnow()
+    }
+
+# EndPoints
 
 
 
