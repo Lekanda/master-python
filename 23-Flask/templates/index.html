@@ -8,51 +8,7 @@
 {% block content %}
     <h1>Contenido del Index</h1>
 
-    <p>
-        Tu edad es : {{edad}}
-    </p>
-
-    {% if edad>=18 and edad<=100 %}
-        <h2>
-            Eres mayor de edad
-        </h2>
-    {% elif edad>100 %}
-        <h2>
-            Eres muy anciano.
-        </h2>
-    {% else %}
-        <h2>
-            Eres menor de edad
-        </h2>
-    {% endif %}
-
-
-    <h2>Listado de Personas</h2>
-    <ul>
-        {% for persona in personas %}
-            <li>{{loop.index}}. {{persona}}</li>
-        {% endfor %}
-    </ul>
-    {# loop.index => Nos da el indice de la lista  #}
-
-
-    <p>
-        {{dato1}}
-        {{dato2}}
-        {{lista}}
-        {{lista[0]}}
-        {{lista[3]}}
-    </p>
-
-
-    {# Esto de abajo es otra forma de comentar #}
-    {# 
-        {{dato1}}
-        {{dato2}}
-        {{lista}}
-        {{lista[0]}}
-        {{lista[3]}}
-    #}
-
+    {% include 'includes/edad.html' %}
+    {% include 'includes/personas.html' %}
 
 {% endblock content %}
