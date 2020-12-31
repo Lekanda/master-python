@@ -132,6 +132,16 @@ def coche(coche_id):
     return render_template('coche.html', coche=coche[0])
 
 
+# Metodo para eliminar un coche.
+@app.route('/borrar-coche/<coche_id>')
+def borrar_coche(coche_id):
+    cursor=mysql.connection.cursor()
+    cursor.execute(f"DELETE FROM coches WHERE id = {coche_id}")
+    mysql.connection.commit()
+
+    flash('Se borro el coche de la DB')
+    return redirect(url_for('coches'))
+
 
 
 # Identifica que el nombre de la aplicacion de flask  sea de un proyecto de Flask.
