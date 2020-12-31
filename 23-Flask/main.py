@@ -143,6 +143,18 @@ def borrar_coche(coche_id):
     return redirect(url_for('coches'))
 
 
+# Metodo para formulario de Editar un coche.
+@app.route('/editar-coche/<coche_id>', methods=['GET','POST'])
+def editar_coche(coche_id):
+    cursor=mysql.connection.cursor()
+    cursor.execute("SELECT * FROM coches WHERE id = %s", (coche_id))
+    coche=cursor.fetchall()
+    cursor.close()
+
+    return render_template('crear_coche.html', coche=coche[0])
+
+
+
 
 # Identifica que el nombre de la aplicacion de flask  sea de un proyecto de Flask.
 if __name__ == '__main__':
