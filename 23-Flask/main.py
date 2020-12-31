@@ -91,7 +91,6 @@ def lenguajes():
 # Ruta para crear coche desde formualrio
 @app.route('/crear-coche', methods=['GET','POST'])
 # methods=['GET','POST']) => Habilita los metodos GET y POST
-
 def crear_coche():
     if request.method=='POST':
         marca=request.form['marca']

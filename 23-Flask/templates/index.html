@@ -13,13 +13,12 @@
             {% for message in messages %}
                 <div id=mss class="message alert-success" >
                     {{message}}
-                    <button type="button" onClick="Hola">Eliminar</button>
                 </div>
             {% endfor %}
         {% endif %}
     {% endwith %}
 
-
+    block script
 
     {% include 'includes/edad.html' %}
     {% include 'includes/personas.html' %}
