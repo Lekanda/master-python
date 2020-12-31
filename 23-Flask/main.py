@@ -121,6 +121,17 @@ def coches():
 
     return render_template('coches.html', coches=coches)
 
+# Metodo para listar un coche.
+@app.route('/coche/<coche_id>')
+def coche(coche_id):
+    cursor=mysql.connection.cursor()
+    cursor.execute("SELECT * FROM coches WHERE id = %s", (coche_id))
+    coche=cursor.fetchall()
+    cursor.close()
+
+    return render_template('coche.html', coche=coche[0])
+
+
 
 
 # Identifica que el nombre de la aplicacion de flask  sea de un proyecto de Flask.
