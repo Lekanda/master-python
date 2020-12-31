@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Contacto
+    {{ super() }}
+{% endblock title %}
+
+{% block content %}
+    <h1>Listado de coches</h1>
+    {% for coche in coches %}
+        <article class="article-item">
+
+            <div class="data">
+                <h2 class="titu">
+                        <a href="">
+                            {{coche.2}}
+                        </a>
+                </h2>
+                <span class="date">
+                    {{coche.1}}
+                    {{coche.3}}
+                </span>
+                <p>
+                    {{coche.4}}
+                </p>
+                <p>
+                    <a href="" class="btn btn-warning" >Editar</a>
+                    <a href="" class="btn" >Eliminar</a>
+                </p>
+            </div>
+
+            <div class="clearfix"></div>
+        </article>
+    {% endfor %}
+{% endblock content %}

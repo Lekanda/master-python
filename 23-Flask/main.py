@@ -111,7 +111,15 @@ def crear_coche():
     return render_template('crear_coche.html')
 
 
+# Metodo para listar los coches.
+@app.route('/coches')
+def coches():
+    cursor=mysql.connection.cursor()
+    cursor.execute('SELECT * FROM coches')
+    coches=cursor.fetchall()
+    cursor.close()
 
+    return render_template('coches.html', coches=coches)
 
 
 
